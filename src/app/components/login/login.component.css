@@ -1,0 +1,31 @@
+mat-card {
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+ mat-form-field {
+    width: 20em;
+}
+
+
+mat-card-header {
+    justify-content: center;
+} 
+
+.buttonLogar{
+    width: 10em;
+}
+
+.buttonSignUp {
+    background-color: rgb(220, 220, 220);
+}
+
+.center {
+    text-align: center;
+}
+
+.example-header-image {
+    background-image: url('../../../assets/img/blog_web.png');
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+}
