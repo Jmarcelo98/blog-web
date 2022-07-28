@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthorizationService } from 'src/app/services/authorization.service';
 import { LoginService } from 'src/app/services/login.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
   hide: boolean = true;
 
   constructor(private formBuilder: FormBuilder, private loginService: LoginService,
-    private authorizationService: AuthorizationService, private router: Router) { }
+    private authorizationService: AuthorizationService, private router: Router,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -27,18 +29,24 @@ export class LoginComponent implements OnInit {
   async login() {
 
     this.loginForm.markAllAsTouched();
-    
-    this.loginService.login(this.loginForm.value).subscribe(jwt => {
-       this.authorizationService.setAccessToken(jwt);
-      this, this.router.navigate(['']);
-    }, (error) => {
-      console.log(error);
 
-      if (error.status == 400) {
-        console.log("error 400");
-      }
+    if (this.loginForm.valid) {
 
-    })
+      this.loginService.login(this.loginForm.value).subscribe(jwt => {
+        this.authorizationService.setAccessToken(jwt);
+        this, this.router.navigate(['']);
+      }, (error) => {
+
+        if (error.status == 401) {
+          this.snackBar.open('Usuario ou senha incorreto', null!, {
+            duration: 3000,
+
+          });
+        }
+
+      })
+
+    }
 
   }
 
