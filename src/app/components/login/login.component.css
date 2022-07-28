@@ -12,6 +12,10 @@ mat-card-header {
     justify-content: center;
 }
 
+a {
+    text-decoration: none;
+}
+
 
 .buttonLogar {
     width: 10em;

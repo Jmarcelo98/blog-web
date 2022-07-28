@@ -1,16 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })
-export class CadastroComponent implements OnInit {
+export class CadastroComponent {
 
-  constructor(private formBuilder: FormBuilder) { }
-
-  ngOnInit(): void {
-  }
+  constructor() { }
 
 }
