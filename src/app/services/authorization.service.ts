@@ -37,9 +37,11 @@ export class AuthorizationService {
   }
 
   isTokenExpired(): boolean {
+
     if (!this.getAccessToken()) {
       return true;
     }
+    
     return this.jwtHelperService.isTokenExpired(this.getAccessToken());
   }
 

@@ -5,12 +5,11 @@
 
             <div class="col-12">
                 <mat-card-header>
-                    <div mat-card-avatar class="example-header-image"></div>
+                    <app-avatar-blog></app-avatar-blog>
                 </mat-card-header>
             </div>
 
         </div>
-
 
         <form [formGroup]="loginForm">
 
@@ -18,7 +17,7 @@
 
                 <div class="col-12">
                     <mat-card-content>
-                        <mat-form-field class="example-full-width" appearance="outline" autofilled>
+                        <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>Usuário</mat-label>
                             <input matInput placeholder="Ex. Joao" formControlName="nickname">
                             <mat-error validate controlName="nickname">Usuário é obrigatório</mat-error>
@@ -68,7 +67,8 @@
 
             <div class="row center">
                 <mat-card-footer>
-                    <p>Ainda não tem conta? <button class="btn buttonSignUp">Cadastre-se</button></p>
+                    <p>Ainda não tem conta? <button class="btn buttonSignUp"> <a
+                                href="/cadastro">Cadastre-se</a></button></p>
                 </mat-card-footer>
             </div>
 

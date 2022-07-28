@@ -1,0 +1,17 @@
+mat-card-header {
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgba(23, 57, 207, 0.8);
+    font-size: 2em;
+    margin-top: 1em
+}
+
+mat-card {
+    background-color: rgb(255, 255, 255, 0.5);
+    margin-top: 10em;
+    padding: 0;
+}
+
+.row {
+    text-align: center
+}

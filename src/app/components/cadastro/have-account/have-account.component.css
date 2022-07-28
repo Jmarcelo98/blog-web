@@ -1,0 +1,38 @@
+h1,
+p,
+a {
+    color: whitesmoke;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    overflow-wrap: break-word;
+    width: 75%;
+    display: inherit;
+    text-align: center;
+}
+
+#haveAccount {
+    background-color: rgba(19, 115, 240, 0.724);
+    height: 100%;
+}
+
+#spaceInitial {
+    margin-top: 8em;
+    display: inline-block;
+}
+
+.btn-outline-light:hover a {
+    color: rgba(19, 115, 240, 0.724);
+}
+
+.btnLogin {
+    width: 10em;
+}

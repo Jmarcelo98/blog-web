@@ -3,17 +3,17 @@ mat-card {
     margin-top: 10em;
 }
 
- mat-form-field {
+mat-form-field {
     width: 20em;
 }
 
 
 mat-card-header {
     justify-content: center;
-} 
+}
 
 
-.buttonLogar{
+.buttonLogar {
     width: 10em;
 }
 

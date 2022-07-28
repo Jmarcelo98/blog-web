@@ -8,6 +8,8 @@ import { LoginModule } from './components/login/login.module';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { jwtConfig } from './config/jwt-config';
+import { CadastroModule } from './components/cadastro/cadastro.module';
+import { SharedModule } from './components/shared/shared.module';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { jwtConfig } from './config/jwt-config';
     BrowserAnimationsModule,
     HttpClientModule,
     JwtModule.forRoot(jwtConfig),
-    LoginModule
+    LoginModule,
+    CadastroModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

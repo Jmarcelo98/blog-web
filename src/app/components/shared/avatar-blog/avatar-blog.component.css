@@ -1,0 +1,11 @@
+mat-card {
+    background-color: rgb(255, 255, 255, 0.5);
+    margin-top: 10em;
+}
+
+.example-header-image {
+    background-image: url('.././../../../assets/img/blog_web.png');
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+}

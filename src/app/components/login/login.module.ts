@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     ReactiveFormsModule,
     FormsModule,
     MatCardModule,
