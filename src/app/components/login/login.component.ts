@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthorizationService } from 'src/app/services/authorization.service';
 import { LoginService } from 'src/app/services/login.service';
@@ -14,10 +14,11 @@ export class LoginComponent implements OnInit {
 
   loginForm = this.formBuilder.group({
     nickname: [null, [Validators.required]],
-    password: [null, Validators.required]
+    password: [null, [Validators.required]]
   })
 
   hide: boolean = true;
+   badRequest: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private loginService: LoginService,
     private authorizationService: AuthorizationService, private router: Router,
@@ -34,14 +35,16 @@ export class LoginComponent implements OnInit {
 
       this.loginService.login(this.loginForm.value).subscribe(jwt => {
         this.authorizationService.setAccessToken(jwt);
-        this, this.router.navigate(['']);
+        this.router.navigate(['']);
       }, (error) => {
 
         if (error.status == 401) {
-          this.snackBar.open('Usuario ou senha incorreto', null!, {
-            duration: 3000,
-
+          this.snackBar.open('Usuário ou senha incorreto!', '', {
+            duration: 4000,
+            verticalPosition: 'top',
+            panelClass: ['red-snackbar']
           });
+
         }
 
       })

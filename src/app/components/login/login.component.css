@@ -35,3 +35,9 @@ a {
     width: 200px;
     height: 200px;
 }
+
+::ng-deep snack-bar-container.red-snackbar {
+    padding: 20px;
+    background-color: rgb(153, 50, 50);
+    color: whitesmoke;
+}

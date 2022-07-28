@@ -1,7 +1,14 @@
-#spaceForm{
+#spaceForm {
     margin-top: 1.5em;
 }
 
 mat-form-field {
     width: 20em;
+}
+
+
+::ng-deep snack-bar-container.red-snackbar {
+    padding: 20px;
+    background-color: rgb(153, 50, 50);
+    color: whitesmoke;
 }
