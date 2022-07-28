@@ -29,6 +29,7 @@ p {
     display: inline-block;
 }
 
+
 .btn-outline-light:hover a {
     color: rgba(19, 115, 240, 0.724);
 }
