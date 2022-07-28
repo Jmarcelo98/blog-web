@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthorizationService } from 'src/app/services/authorization.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -8,26 +11,36 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  login = this.formBuilder.group({
+  loginForm = this.formBuilder.group({
     nickname: [null, [Validators.required]],
     password: [null, Validators.required]
   })
 
   hide: boolean = true;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private loginService: LoginService,
+    private authorizationService: AuthorizationService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  entrar() {
+  async login() {
+
+    this.loginForm.markAllAsTouched();
+    
+    this.loginService.login(this.loginForm.value).subscribe(jwt => {
+       this.authorizationService.setAccessToken(jwt);
+      this, this.router.navigate(['']);
+    }, (error) => {
+      console.log(error);
+
+      if (error.status == 400) {
+        console.log("error 400");
+      }
+
+    })
 
   }
 
-  hideShow(event: any) {
-    if (event.pointerType === 'mouse') {
-      this.hide = !this.hide;
-    }
-  }
 
 }

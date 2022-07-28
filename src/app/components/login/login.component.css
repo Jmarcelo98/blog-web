@@ -1,5 +1,6 @@
 mat-card {
     background-color: rgb(255, 255, 255, 0.5);
+    margin-top: 10em;
 }
 
  mat-form-field {

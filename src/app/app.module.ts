@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginModule } from './components/login/login.module';
+import { HttpClientModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
+import { jwtConfig } from './config/jwt-config';
 
 
 @NgModule({
@@ -15,6 +18,8 @@ import { LoginModule } from './components/login/login.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    JwtModule.forRoot(jwtConfig),
     LoginModule
   ],
   providers: [],
