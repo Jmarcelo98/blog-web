@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthorizationService } from './authorization.service';
 
@@ -8,8 +7,7 @@ import { AuthorizationService } from './authorization.service';
 
 export class LoginService {
 
-  constructor(private authorization: AuthorizationService, private http: HttpClient) { }
-
+  constructor(private authorization: AuthorizationService) { }
 
   login(login: { nickname: string, password: string }) {
 
