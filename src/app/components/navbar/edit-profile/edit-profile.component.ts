@@ -19,7 +19,9 @@ export class EditProfileComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(EditProfileModalComponent, {disableClose: true})
-  } 
+    const dialogRef = this.dialog.open(EditProfileModalComponent, 
+      { disableClose: true, height: '75%', width: '60%' }
+      )
+  }
 
 }
