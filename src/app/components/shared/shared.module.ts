@@ -2,17 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AvatarBlogComponent } from './avatar-blog/avatar-blog.component';
 
-
-
 @NgModule({
   declarations: [
-    AvatarBlogComponent
+    AvatarBlogComponent,
   ],
   exports: [
-    AvatarBlogComponent
+    AvatarBlogComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+
   ]
 })
 export class SharedModule { }

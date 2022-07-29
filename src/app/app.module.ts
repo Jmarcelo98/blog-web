@@ -9,12 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { jwtConfig } from './config/jwt-config';
 import { CadastroModule } from './components/cadastro/cadastro.module';
-import { SharedModule } from './components/shared/shared.module';
+import { PagesModule } from './pages/pages/pages.module';
+import { NavbarModule } from './components/navbar/navbar.module';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +26,8 @@ import { SharedModule } from './components/shared/shared.module';
     JwtModule.forRoot(jwtConfig),
     LoginModule,
     CadastroModule,
+    PagesModule,
+    NavbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

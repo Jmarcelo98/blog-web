@@ -3,8 +3,7 @@ import { Inject, Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { environment } from 'src/environments/environment';
-import { NicknameUserLogged } from '../components/models/nickname-user-logged';
-import { User } from '../components/models/user';
+import { NicknameUserLogged } from '../models/nickname-user-logged';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
