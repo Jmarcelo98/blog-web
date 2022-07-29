@@ -1,0 +1,22 @@
+<nav class="nav nav-pills nav-justified">
+
+  <a *ngFor="let itens of categories" class="nav-item nav-link">
+    <button class="btn btnLinks" (click)="getPostsByCategory(itens.id)">{{itens.description}}</button>
+  </a>
+
+  <div class="d-flex">
+
+
+    <div *ngIf="logged then editProfile else login"></div>
+
+  </div>
+
+</nav>
+
+<ng-template #login>
+  <app-button-login></app-button-login>
+</ng-template>
+
+<ng-template #editProfile>
+  <app-edit-profile></app-edit-profile>
+</ng-template>

@@ -1,0 +1,12 @@
+/* .mat-menu-item {
+    border: solid 1px red;
+} */
+
+.mat-icon {
+    vertical-align: middle;
+}
+
+.btnLoginLogout {
+    border: 0.1px solid;
+    border-radius: 50%;
+}

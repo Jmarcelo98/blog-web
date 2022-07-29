@@ -1,0 +1,11 @@
+nav {
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+.btnLinks {
+    border-bottom: solid 1px;
+    border-radius: 0;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+}
