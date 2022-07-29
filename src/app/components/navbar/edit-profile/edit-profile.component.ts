@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatMenuTrigger } from '@angular/material/menu';
+import { EditProfileModalComponent } from 'src/app/pages/pages/modal/edit-profile-modal/edit-profile-modal.component';
 
 @Component({
   selector: 'app-edit-profile',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
+
+  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
 
   ngOnInit(): void {
+    this.openDialog()
   }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(EditProfileModalComponent, {disableClose: true})
+  } 
 
 }

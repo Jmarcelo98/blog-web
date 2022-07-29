@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(private categoryService: CategoryService, private authGuardService: AuthGuardService) { }
 
-  logged = false
+  logged = true
 
   public categories: Category[];
 
