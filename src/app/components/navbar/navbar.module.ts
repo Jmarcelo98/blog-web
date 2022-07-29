@@ -6,6 +6,7 @@ import { NavbarComponent } from './navbar.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ButtonLoginComponent } from './button-login/button-login.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -20,7 +21,8 @@ import { MatDividerModule } from '@angular/material/divider';
     CommonModule,
     MatIconModule,
     MatMenuModule,
-    MatDividerModule
+    MatDividerModule,
+    SharedModule
   ]
 })
 export class NavbarModule { }

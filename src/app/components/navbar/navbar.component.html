@@ -1,11 +1,14 @@
 <nav class="nav nav-pills nav-justified">
 
+  <a class="imgLo" href="">
+    <img src="../../../assets/img/icon/blogWeb.ico" alt="Blog Web">
+  </a>
+
   <a *ngFor="let itens of categories" class="nav-item nav-link">
     <button class="btn btnLinks" (click)="getPostsByCategory(itens.id)">{{itens.description}}</button>
   </a>
 
   <div class="d-flex">
-
 
     <div *ngIf="logged then editProfile else login"></div>
 
