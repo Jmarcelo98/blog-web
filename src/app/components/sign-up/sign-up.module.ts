@@ -1,35 +1,35 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SharedModule } from '../shared/shared.module';
-
+import { FormCadastroComponent } from './form-cadastro/form-cadastro.component';
+import { HaveAccountComponent } from './have-account/have-account.component';
 
 @NgModule({
   declarations: [
-    LoginComponent
+    FormCadastroComponent,
+    HaveAccountComponent
+  ],
+  exports: [
+    FormCadastroComponent,
+    HaveAccountComponent
   ],
   imports: [
-    CommonModule,
     SharedModule,
+    CommonModule,
     ReactiveFormsModule,
-    FormsModule,
     MatCardModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatToolbarModule,
     MatButtonModule,
-    MatSnackBarModule,
+    MatInputModule,
     MatIconModule,
-    MatDividerModule
   ]
 })
-export class LoginModule { }
+export class SignUpModule { }
