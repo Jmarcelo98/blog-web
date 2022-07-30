@@ -6,7 +6,6 @@ mat-form-field {
     width: 20em;
 }
 
-
 ::ng-deep snack-bar-container.red-snackbar {
     padding: 20px;
     background-color: rgb(153, 50, 50);
