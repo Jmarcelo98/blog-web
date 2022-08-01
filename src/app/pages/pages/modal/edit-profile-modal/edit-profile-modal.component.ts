@@ -30,7 +30,7 @@ export class EditProfileModalComponent implements OnInit {
     await this.getImage();
 
     this.formUpdate = this.formBuilder.group({
-      nickname: [this.userLogged.nickname],
+      profilePicture: [this.userLogged.profilePicture],
       urlLinkedin: [this.userLogged.urlLinkedin],
       urlInstagram: [this.userLogged.urlInstagram],
       urlWebSite: [this.userLogged.urlWebSite],
@@ -43,6 +43,27 @@ export class EditProfileModalComponent implements OnInit {
 
   }
 
+  async updateProfilePictureView() {
+
+    this.userLogged.profilePicture = this.formUpdate.get('profilePicture')?.value
+
+    this.getImage()
+
+  }
+
+  uploadProfilePicture(event: any) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0] as File;
+      const reader = new FileReader()
+      reader.onload = (e: any) => {
+        const bytes = e.target.result.split('base64,')[1]
+        this.formUpdate.controls['profilePicture'].setValue(bytes)
+        this.updateProfilePictureView()
+      }
+      reader.readAsDataURL(file)
+    }
+  }
+
   async getInfosUserLogged() {
 
     await this.userService.getInfosUserLogged().toPromise().then((user) => {
@@ -53,6 +74,7 @@ export class EditProfileModalComponent implements OnInit {
 
   }
 
+  // buscar imagem do usuario
   async getImage() {
 
     this.defaultImage = "../../../../../assets/img/default.png"

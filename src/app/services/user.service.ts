@@ -11,7 +11,14 @@ export class UserService {
   constructor(private httpClient: HttpClient) { }
 
   createUser(login: { nickname: string, password: string }) {
-    return this.httpClient.post(`${environment.apiUrl}/users`, login)
+    return this.httpClient.post(`${environment.apiUrl}/users`, login);
+  }
+
+  updateUser(formUpdate : {profilePicture: string[], urlLinkedin: 
+    string, urlInstagram: string, urlWebSite: string, 
+    biography: string}) {
+
+    return this.httpClient.patch(`${environment.apiUrl}/users`, formUpdate);
   }
 
   getInfosUserLogged(){
