@@ -15,7 +15,6 @@ export class EditProfileComponent implements OnInit {
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
 
   ngOnInit(): void {
-    this.openDialog()
   }
 
   openDialog() {
