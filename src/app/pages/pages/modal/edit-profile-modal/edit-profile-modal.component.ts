@@ -30,6 +30,7 @@ export class EditProfileModalComponent implements OnInit {
     await this.getImage();
 
     this.formUpdate = this.formBuilder.group({
+      nickname: [this.userLogged.nickname],
       urlLinkedin: [this.userLogged.urlLinkedin],
       urlInstagram: [this.userLogged.urlInstagram],
       urlWebSite: [this.userLogged.urlWebSite],
