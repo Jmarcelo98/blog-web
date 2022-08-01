@@ -28,6 +28,7 @@ import { MatDialogModule } from '@angular/material/dialog';
   imports: [
     CommonModule,
     SignUpModule,
+    FormsModule,
     SharedModule,
     ReactiveFormsModule,
     MatCardModule,

@@ -19,21 +19,21 @@
       <div class="col-12 center">
         <mat-form-field class="example-full-width inputUrls" appearance="outline">
           <mat-label>URL LinkedIn</mat-label>
-          <input matInput placeholder="Ex. https://www.linkedin.com/in/blogweb/">
+          <input [(ngModel)]="userLogged.urlLinkedin" matInput placeholder="Ex. https://www.linkedin.com/in/blogweb/">
         </mat-form-field>
       </div>
 
       <div class="col-12 center">
         <mat-form-field class="example-full-width inputUrls" appearance="outline">
           <mat-label>URL Instagram</mat-label>
-          <input matInput placeholder="Ex. https://www.instagram.com/blogweb/">
+          <input [(ngModel)]="userLogged.urlInstagram" matInput placeholder="Ex. https://www.instagram.com/blogweb/">
         </mat-form-field>
       </div>
 
       <div class="col-12 center">
         <mat-form-field class="example-full-width inputUrls" appearance="outline">
           <mat-label>URL WebSite</mat-label>
-          <input matInput placeholder="Ex. https://jmarcelo98.github.io/portfolio/">
+          <input [(ngModel)]="userLogged.urlWebSite" matInput placeholder="Ex. https://jmarcelo98.github.io/portfolio/">
         </mat-form-field>
       </div>
 
@@ -51,7 +51,8 @@
       <p>
         <mat-form-field class="example-full-width inputBiography" appearance="fill">
           <mat-label>Biografia</mat-label>
-          <textarea matInput placeholder="Ex. Apaixonado por programação e Java/Spring Boot"></textarea>
+          <textarea [maxLength]="255" [(ngModel)]="userLogged.biography" matInput
+            placeholder="Ex. Apaixonado por programação e Java/Spring Boot"></textarea>
         </mat-form-field>
       </p>
     </div>
@@ -62,6 +63,18 @@
 
 <mat-divider></mat-divider>
 
-<div mat-dialog-actions>
-  <button mat-button (click)="closeModal()" class="btnClose">Fechar</button>
+<div class="row">
+
+  <div class="col-6">
+    <div mat-dialog-actions>
+      <button mat-button (click)="closeModal()" class="btnClose">Fechar</button>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div mat-dialog-actions class="rightBtn">
+      <button mat-button class="btnUpdate">Atualizar</button>
+    </div>
+  </div>
+
 </div>
