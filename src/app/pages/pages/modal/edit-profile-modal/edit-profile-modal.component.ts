@@ -40,7 +40,7 @@ export class EditProfileModalComponent implements OnInit {
 
   async getImage() {
 
-    this.defaultImage = "../../../../../assets/img/defaultUser.png"
+    this.defaultImage = "../../../../../assets/img/default.png"
 
     if (this.userLogged.profilePicture == null) {
       this.image = this.defaultImage

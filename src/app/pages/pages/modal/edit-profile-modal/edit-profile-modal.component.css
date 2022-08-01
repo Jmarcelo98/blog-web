@@ -1,6 +1,5 @@
 mat-form-field {
     margin: -5px;
-    width: 20em;
 }
 
 img {
@@ -13,4 +12,12 @@ h1 {
 
 .centerImg {
     text-align: center;
+}
+
+.inputBiography {
+    width: 100%;
+}
+
+.inputUrls {
+    width: 20em;
 }
