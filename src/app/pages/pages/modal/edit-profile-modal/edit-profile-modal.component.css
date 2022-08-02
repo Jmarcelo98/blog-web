@@ -20,11 +20,11 @@ h1 {
     text-align: center;
 }
 
-.inputBiography {
-    width: 100%;
+.biografia {
+    margin-top: 0.3em;
 }
 
-.inputUrls {
+.input {
     width: 100%;
 }
 

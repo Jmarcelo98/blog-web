@@ -23,21 +23,21 @@
     <div class="row">
 
       <div class="col-12 center">
-        <mat-form-field class="example-full-width inputUrls" appearance="outline">
+        <mat-form-field class="example-full-width input" appearance="outline">
           <mat-label>URL LinkedIn</mat-label>
           <input [(ngModel)]="userLogged.urlLinkedin" matInput placeholder="Ex. https://www.linkedin.com/in/blogweb/">
         </mat-form-field>
       </div>
 
       <div class="col-12 center">
-        <mat-form-field class="example-full-width inputUrls" appearance="outline">
+        <mat-form-field class="example-full-width input" appearance="outline">
           <mat-label>URL Instagram</mat-label>
           <input [(ngModel)]="userLogged.urlInstagram" matInput placeholder="Ex. https://www.instagram.com/blogweb/">
         </mat-form-field>
       </div>
 
       <div class="col-12 center">
-        <mat-form-field class="example-full-width inputUrls" appearance="outline">
+        <mat-form-field class="example-full-width input" appearance="outline">
           <mat-label>URL WebSite</mat-label>
           <input [(ngModel)]="userLogged.urlWebSite" matInput placeholder="Ex. https://jmarcelo98.github.io/portfolio/">
         </mat-form-field>
@@ -49,13 +49,13 @@
 
 </div>
 
-<div class="row" style="margin-top: 10px">
+<div class="row" style="margin-top: 15px">
 
   <div class="col-12">
 
     <div mat-dialog-content>
       <p>
-        <mat-form-field class="example-full-width inputBiography" appearance="fill">
+        <mat-form-field class="example-full-width input biografia" appearance="outline">
           <mat-label>Biografia</mat-label>
           <textarea [maxLength]="255" [(ngModel)]="userLogged.biography" matInput
             placeholder="Ex. Apaixonado por programação e Java/Spring Boot"></textarea>
