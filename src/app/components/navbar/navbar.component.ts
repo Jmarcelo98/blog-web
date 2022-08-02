@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from 'src/app/models/category';
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
+import { AuthorizationService } from 'src/app/services/authorization.service';
 import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
@@ -10,30 +11,38 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private categoryService: CategoryService, private authGuardService: AuthGuardService) { }
+  constructor(private categoryService: CategoryService, private authGuardService: AuthGuardService,
+    private authorizationService: AuthorizationService) { }
 
-  logged = true
+  logged: boolean;
 
   public categories: Category[];
 
-  ngOnInit(): void {
+  async ngOnInit() {
 
-    this.categoryService.getAll().subscribe( allCategories => {
+    await this.getAllCategories()
 
-      this.categories = allCategories;
-
-    }, err => {
-
-      console.log(err);
-      
-      
-    })
-
-    // this.isLogged();
+    await this.isTokenExpired()
 
   }
 
-  isLogged() {
+  async getAllCategories() {
+    await this.categoryService.getAll().toPromise().then( allCategories => {
+      this.categories = allCategories;
+    }).catch( err => {
+      console.log(err);
+    })
+  }
+
+  async isTokenExpired() {
+
+    if(!this.authorizationService.isTokenExpired()) {
+      await this.isLogged();
+    }
+
+  }
+
+  isLogged() { 
     this.logged = this.authGuardService.isUsuarioAuthenticated();
   }
 

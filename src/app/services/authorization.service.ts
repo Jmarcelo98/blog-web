@@ -27,6 +27,10 @@ export class AuthorizationService {
     return this.http.post(`${environment.apiUrl}/login`, { nickname, password }, { headers: reqHeader, responseType: 'text' });
   }
 
+  logout() {
+    localStorage.removeItem(this.ACCESS_TOKEN)
+  }
+
   setAccessToken(token: string) {
     localStorage.setItem(this.ACCESS_TOKEN, token);
   }
@@ -42,6 +46,12 @@ export class AuthorizationService {
     }
     
     return this.jwtHelperService.isTokenExpired(this.getAccessToken());
+  }
+
+  headersAuth(): HttpHeaders {
+    return new HttpHeaders({
+       'Authorization': 'Bearer ' + this.getAccessToken()
+      })
   }
 
   getLoggedUser(): NicknameUserLogged {

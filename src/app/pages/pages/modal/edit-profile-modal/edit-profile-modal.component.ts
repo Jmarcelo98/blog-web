@@ -41,6 +41,13 @@ export class EditProfileModalComponent implements OnInit {
 
   async update() {
 
+    await this.userService.updateUser(this.formUpdate.value).toPromise().then( sucesso => {
+      console.log("atualiazdo com suc");
+      
+    }).catch (err => {
+      console.log(err);
+    })
+
   }
 
   async updateProfilePictureView() {

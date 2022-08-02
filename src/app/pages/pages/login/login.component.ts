@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   })
 
   hide: boolean = true;
-   badRequest: boolean = false;
+  badRequest: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private loginService: LoginService,
     private authorizationService: AuthorizationService, private router: Router,
@@ -35,7 +35,12 @@ export class LoginComponent implements OnInit {
 
       this.loginService.login(this.loginForm.value).subscribe(jwt => {
         this.authorizationService.setAccessToken(jwt);
-        this.router.navigate(['']);
+
+        this.router.navigate([''])
+          .then(() => {
+            window.location.reload();
+          });
+
       }, (error) => {
 
         if (error.status == 401) {
