@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { DomSanitizer } from '@angular/platform-browser';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
@@ -13,7 +14,7 @@ import { UserService } from 'src/app/services/user.service';
 export class EditProfileModalComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<EditProfileModalComponent>, private userService: UserService,
-    private sanitizer: DomSanitizer, private formBuilder: FormBuilder) { }
+    private sanitizer: DomSanitizer, private formBuilder: FormBuilder, private snackBar: MatSnackBar) { }
 
   userLogged: User = new User();
 
@@ -42,7 +43,14 @@ export class EditProfileModalComponent implements OnInit {
   async update() {
 
     await this.userService.updateUser(this.formUpdate.value).toPromise().then( sucesso => {
-      console.log("atualiazdo com suc");
+      
+      this.snackBar.open('Usuário atualizado com sucesso!', '', {
+        duration: 4000,
+        verticalPosition: 'top',
+        panelClass: ['blue-snackbar']
+      });
+
+      this.closeModal()
       
     }).catch (err => {
       console.log(err);
