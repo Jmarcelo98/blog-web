@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DomSanitizer } from '@angular/platform-browser';
+import { FollowCount } from 'src/app/models/followCount';
 import { User } from 'src/app/models/user';
 import { AuthorizationService } from 'src/app/services/authorization.service';
+import { FollowService } from 'src/app/services/follow.service';
+import { PostService } from 'src/app/services/post.service';
 import { EditProfileModalComponent } from '../../modal/edit-profile-modal/edit-profile-modal.component';
 
 @Component({
@@ -18,13 +20,54 @@ export class UserInfosComponent implements OnInit {
   @Input()
   image: any
 
-  constructor(private authorizationService: AuthorizationService, private dialog: MatDialog) { }
+  countPostsCreated: number
+
+  followCount: FollowCount = new FollowCount()
+
+  constructor(private authorizationService: AuthorizationService, private dialog: MatDialog,
+    private postService: PostService, private followService: FollowService) { }
 
   async ngOnInit() {
 
-    console.log("user infos: " + this.user.nickname);
+    await this.countPosts()
+
+    await this.countFollow()
 
   }
+
+  async countFollow() {
+
+    await this.followService.countPostsCreated(this.user.nickname).toPromise().then(value => {
+      this.followCount = value;
+    }).catch(err => {
+      console.log(err);
+    })
+
+  }
+
+  async countPosts() {
+
+    await this.postService.countPostsCreated(this.user.nickname).toPromise().then(count => {
+
+      this.countPostsCreated = count;
+
+    }).catch(err => {
+
+      console.log(err);
+
+    })
+
+  }
+
+
+  async openDialog() {
+    const dialogRef = this.dialog.open(EditProfileModalComponent,
+      { disableClose: true, width: '50em' }
+    )
+    dialogRef.componentInstance.user = this.user
+    dialogRef.componentInstance.image = this.image
+  }
+
 
   urlUserIsSameUserLogged(): boolean {
 
@@ -34,14 +77,6 @@ export class UserInfosComponent implements OnInit {
 
     return false;
 
-  }
-
-  async openDialog() {
-    const dialogRef = this.dialog.open(EditProfileModalComponent,
-      { disableClose: true, width: '50em' }
-    )
-    dialogRef.componentInstance.user = this.user
-    dialogRef.componentInstance.image = this.image
   }
 
 

@@ -7,9 +7,24 @@ img {
     text-align: right;
 }
 
+/* .btnEditAndFollow {
+    text-align: left;
+} */
+
+.infosNumber {
+    margin-top: 20px;
+}
+
 .nickname {
-    text-align: center;
+    /* text-align: center; */
     font-family: monospace;
     font-size: 30px;
     align-self: center;
+}
+
+@media(max-width: 500px) {
+    img {
+        width: 10em;
+        border-radius: 100%;
+    }
 }

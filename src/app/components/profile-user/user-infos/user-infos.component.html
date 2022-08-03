@@ -1,4 +1,4 @@
-<div class="row justify-content-center">
+<div class="row">
 
     <div class="col-5 right">
 
@@ -10,14 +10,29 @@
 
         <div class="row">
 
-            <div class="col-2 nickname">
+            <div class="col-5 col-md-2 nickname">
                 {{user.nickname}}
             </div>
 
-            <div class="col">
+            <div class="col-7 col-md-3">
                 <div *ngIf="urlUserIsSameUserLogged() then isSame else notSame"></div>
             </div>
 
+        </div>
+
+
+        <div class="row infosNumber">
+            <div class="col-3 col-md-2">
+                <app-post-infos [countPostsCreated]="countPostsCreated"></app-post-infos>
+            </div>
+
+            <div class="col-5 col-md-2">
+                <app-followers-infos *ngIf="followCount.followers != undefined" [followers]="followCount.followers"></app-followers-infos>
+            </div>
+
+            <div class="col-4 col-md-2">
+                <app-following-infos *ngIf="followCount.following != undefined" [following]="followCount.following"></app-following-infos>
+            </div>
         </div>
 
     </div>
@@ -25,7 +40,7 @@
 </div>
 
 <ng-template #isSame>
-    <button class="btn btn-outline-primary" (click)="openDialog()">Editar Perfil</button>
+    <button class="btn btn-outline-primary btnEditAndFollow" (click)="openDialog()">Editar perfil</button>
 </ng-template>
 
 <ng-template #notSame>
