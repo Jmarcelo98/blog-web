@@ -7,12 +7,14 @@ import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { FollowModalComponent } from './follow-modal/follow-modal.component';
 
 
 
 @NgModule({
   declarations: [
-    EditProfileModalComponent
+    EditProfileModalComponent,
+    FollowModalComponent
   ],
   exports: [
     EditProfileModalComponent

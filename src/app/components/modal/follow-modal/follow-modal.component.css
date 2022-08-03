@@ -1,0 +1,21 @@
+img {
+    width: 50px;
+    border-radius: 100%;
+}
+
+.row {
+    border: solid 1px;
+    margin-bottom: 10px;
+}
+
+.btnClose {
+    background-color: rgb(239, 0, 0, 0.35)
+}
+
+.mat-dialog-title {
+    text-align: center;
+}
+
+.nickname {
+    align-self: center;
+}

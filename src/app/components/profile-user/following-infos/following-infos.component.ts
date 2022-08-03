@@ -1,22 +1,32 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { FollowModalComponent } from '../../modal/follow-modal/follow-modal.component';
 
 @Component({
   selector: 'app-following-infos',
   templateUrl: './following-infos.component.html',
   styleUrls: ['./following-infos.component.css']
 })
-export class FollowingInfosComponent implements OnInit {
+export class FollowingInfosComponent implements OnInit{
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
+
+  ngOnInit(): void {
+    this.openModal()
+  }
 
   @Input()
   following: number
 
-  ngOnInit(): void {
+  @Input()
+  nickname: string
 
-    console.log(this.following);
-    
-
+  openModal() {
+    const dialogRef = this.dialog.open(FollowModalComponent,
+      { disableClose: false, width: '25em' }
+    )
+    dialogRef.componentInstance.nickname = this.nickname;
+    dialogRef.componentInstance.typeFollow = "following"
   }
 
 }
