@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { ModalFollow } from 'src/app/models/modalFollow';
 import { FollowService } from 'src/app/services/follow.service';
 
@@ -10,10 +12,11 @@ import { FollowService } from 'src/app/services/follow.service';
 })
 export class FollowModalComponent implements OnInit {
 
-  constructor(private followService: FollowService, private domSanitizer: DomSanitizer) { }
+  constructor(private followService: FollowService, private domSanitizer: DomSanitizer, private router: Router,
+    private dialogRef: MatDialogRef<FollowModalComponent>) { }
 
   nickname: string
-  
+
   typeFollow: string
 
   titleType: string
@@ -34,12 +37,22 @@ export class FollowModalComponent implements OnInit {
 
   }
 
+  redirectUser(nickname: string) {
+
+    this.router.navigate(['/user/' + nickname])
+      .then(() => {
+        window.location.reload();
+      });
+      
+    this.closeModal()
+  }
+
 
   async getAllFollowing() {
 
     await this.followService.getAllFollow(this.typeFollow, this.nickname).toPromise().then(value => {
 
-      this.modalFollow = value 
+      this.modalFollow = value
 
     }).catch(err => {
       console.log(err);
@@ -64,9 +77,14 @@ export class FollowModalComponent implements OnInit {
       }
 
       element.profilePicture = image;
-      
+
     }
 
+  }
+
+
+  closeModal() {
+    this.dialogRef.close();
   }
 
 }

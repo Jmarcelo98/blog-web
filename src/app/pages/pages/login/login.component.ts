@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 
       }, (error) => {
 
-        if (error.status == 401) {
+        if (error.status == 403) {
           this.snackBar.open('Usuário ou senha incorreto!', '', {
             duration: 4000,
             verticalPosition: 'top',

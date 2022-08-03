@@ -3,8 +3,14 @@ img {
     border-radius: 100%;
 }
 
+.notStyle {
+    all: unset;
+    cursor: pointer;
+}
+
+
 .row {
-    border: solid 1px;
+    border: ridge 1px;
     margin-bottom: 10px;
 }
 

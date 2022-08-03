@@ -1,0 +1,9 @@
+<div *ngIf="isFollow then notFollow else follow"></div>
+
+<ng-template #follow>
+    <button class="btn btn-primary btnFollow" (click)="createFollow()">Seguir</button>
+</ng-template>
+
+<ng-template #notFollow>
+    <button class="btn btn-dark btnUnfollow" (click)="unFollow()">Deixar de seguir</button>
+</ng-template>

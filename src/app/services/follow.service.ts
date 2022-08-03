@@ -12,7 +12,17 @@ export class FollowService {
 
   constructor(private httpClient: HttpClient, private authorizationService: AuthorizationService) { }
 
-  countPostsCreated(nickname: string) {
+  create(nickname: string) {
+    return this.httpClient.post(`${environment.apiUrl}/follower/${nickname}`,
+      { headers: this.authorizationService.headersAuth() })
+  }
+
+  delete(nickname: string) {
+    return this.httpClient.delete(`${environment.apiUrl}/follower/${nickname}`,
+      { headers: this.authorizationService.headersAuth() })
+  }
+
+  countFollows(nickname: string) {
     return this.httpClient.get<FollowCount>(`${environment.apiUrl}/follower/count-follower/${nickname}`,
       { headers: this.authorizationService.headersAuth() })
   }
@@ -20,6 +30,11 @@ export class FollowService {
   getAllFollow(typeFollow: string, nickname: string) {
     let urlType = "all-" + typeFollow + "/" + nickname
     return this.httpClient.get<ModalFollow[]>(`${environment.apiUrl}/follower/${urlType}`,
+      { headers: this.authorizationService.headersAuth() })
+  }
+
+  isFollow(nickname: string) {
+    return this.httpClient.get<boolean>(`${environment.apiUrl}/follower/isFollow/${nickname}`,
       { headers: this.authorizationService.headersAuth() })
   }
 

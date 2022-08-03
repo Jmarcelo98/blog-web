@@ -8,18 +8,22 @@ import { PostInfosComponent } from './post-infos/post-infos.component';
 import { FollowersInfosComponent } from './followers-infos/followers-infos.component';
 import { FollowingInfosComponent } from './following-infos/following-infos.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { ButtonFollowComponent } from './button-follow/button-follow.component';
 
 @NgModule({
   declarations: [
     UserInfosComponent,
     PostInfosComponent,
     FollowersInfosComponent,
-    FollowingInfosComponent
+    FollowingInfosComponent,
+    ButtonFollowComponent
   ],
   exports: [
     UserInfosComponent,
     PostInfosComponent,
-    FollowersInfosComponent
+    FollowersInfosComponent,
+    FollowingInfosComponent,
+    ButtonFollowComponent
   ],
   imports: [
     CommonModule,
@@ -27,6 +31,6 @@ import { MatDividerModule } from '@angular/material/divider';
     NavbarModule,
     MatButtonModule,
     MatDividerModule
-  ]
+  ],
 })
 export class ProfileUserModule { }

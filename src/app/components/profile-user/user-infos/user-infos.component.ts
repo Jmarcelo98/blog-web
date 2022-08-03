@@ -36,8 +36,8 @@ export class UserInfosComponent implements OnInit {
   }
 
   async countFollow() {
-
-    await this.followService.countPostsCreated(this.user.nickname).toPromise().then(value => {
+    
+    await this.followService.countFollows(this.user.nickname).toPromise().then(value => {
       this.followCount = value;
     }).catch(err => {
       console.log(err);

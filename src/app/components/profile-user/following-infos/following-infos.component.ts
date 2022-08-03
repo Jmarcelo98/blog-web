@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FollowModalComponent } from '../../modal/follow-modal/follow-modal.component';
 
@@ -7,13 +7,9 @@ import { FollowModalComponent } from '../../modal/follow-modal/follow-modal.comp
   templateUrl: './following-infos.component.html',
   styleUrls: ['./following-infos.component.css']
 })
-export class FollowingInfosComponent implements OnInit{
+export class FollowingInfosComponent {
 
   constructor(private dialog: MatDialog) { }
-
-  ngOnInit(): void {
-    this.openModal()
-  }
 
   @Input()
   following: number

@@ -1,0 +1,12 @@
+.btnFollow {
+    width: 5.5em;
+    --bs-btn-bg: #56abf3;
+    /* background-color: #56abf3; */
+}
+
+.btnUnfollow {
+    width: 10em;
+    --bs-btn-color: #464444;
+    --bs-btn-bg: rgb(73 73 74 / 5%);
+    --bs-btn-hover-bg: #767676b8;
+}

@@ -1,8 +1,4 @@
 button {
-    all: unset;
-    cursor: pointer;
-  }
-  
-  button:focus {
-    outline: orange 5px auto;
-  }
+  all: unset;
+  cursor: pointer;
+}

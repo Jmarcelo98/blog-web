@@ -24,7 +24,12 @@ export class ButtonProfileComponent {
   }
 
   redirectProfilePageUserLogged() {
+
     this.router.navigate(['/user/' + this.authorizationService.getLoggedUser().sub])
+    .then(() => {
+      window.location.reload();
+    });
+    
   }
 
   logout() {

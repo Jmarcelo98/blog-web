@@ -10,13 +10,23 @@
 
         <div class="row">
 
-            <div class="col-5 col-md-2 nickname">
+            <div class="col-12 col-md-3 nickname">
                 {{user.nickname}}
             </div>
 
-            <div class="col-7 col-md-3">
+            <div class="col-12 col-md-3 btnEditAndFollow">
                 <div *ngIf="urlUserIsSameUserLogged() then isSame else notSame"></div>
             </div>
+
+            <ng-template #isSame>
+                <button class="btn btn-outline-primary" (click)="openDialog()">Editar perfil</button>
+            </ng-template>
+
+            <ng-template #notSame>
+                <div class="btnFollow">
+                    <app-button-follow [nickname]="user.nickname"></app-button-follow>
+                </div>
+            </ng-template>
 
         </div>
 
@@ -27,24 +37,18 @@
             </div>
 
             <div class="col-5 col-md-2">
-                <app-followers-infos *ngIf="followCount.followers != undefined" [followers]="followCount.followers">
+                <app-followers-infos *ngIf="followCount.followers != undefined" [nickname]="user.nickname"
+                    [followers]="followCount.followers">
                 </app-followers-infos>
             </div>
 
             <div class="col-4 col-md-2">
                 <app-following-infos *ngIf="followCount.following != undefined" [nickname]="user.nickname"
-                    [following]="followCount.following"></app-following-infos>
+                    [following]="followCount.following">
+                </app-following-infos>
             </div>
         </div>
 
     </div>
 
 </div>
-
-<ng-template #isSame>
-    <button class="btn btn-outline-primary btnEditAndFollow" (click)="openDialog()">Editar perfil</button>
-</ng-template>
-
-<ng-template #notSame>
-    <button class="btn btn-primary">Seguir</button>
-</ng-template>

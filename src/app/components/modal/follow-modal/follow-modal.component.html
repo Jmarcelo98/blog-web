@@ -5,7 +5,9 @@
         <div class="row">
 
             <div class="col-3">
-                <img [src]="item.profilePicture" alt="">
+                <button class="notStyle" (click)="redirectUser(item.nickname)"> 
+                    <img [src]="item.profilePicture" alt="">
+                </button>
             </div>
 
             <div class="col-9 nickname">
@@ -14,19 +16,10 @@
 
         </div>
     </div>
-    <!-- My favorite animal is:
-  <ul>
-    <li>
-      <span *ngIf="data.animal === 'panda'">&#10003;</span> Panda
-    </li>
-    <li>
-      <span *ngIf="data.animal === 'unicorn'">&#10003;</span> Unicorn
-    </li>
-    <li>
-      <span *ngIf="data.animal === 'lion'">&#10003;</span> Lion
-    </li>
-  </ul> -->
+
 </div>
+
+<mat-divider></mat-divider>
 
 <div class="col-6">
     <div mat-dialog-actions>
