@@ -14,22 +14,25 @@ import { SharedModule } from 'src/app/components/shared/shared.module';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignUpModule } from 'src/app/components/sign-up/sign-up.module';
-import { EditProfileModalComponent } from './modal/edit-profile-modal/edit-profile-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { ProfileUserModule } from 'src/app/components/profile-user/profile-user.module';
+import { UserComponent } from './user/user.component';
+import { ModalModule } from 'src/app/components/modal/modal.module';
 
 @NgModule({
   declarations: [
     HomeComponent,
     LoginComponent,
     SignUpComponent,
-    EditProfileModalComponent,
+    UserComponent
   ],
   imports: [
     CommonModule,
-    SignUpModule,
     FormsModule,
+    SignUpModule,
     SharedModule,
+    ProfileUserModule,
+    ModalModule,
     ReactiveFormsModule,
     MatCardModule,
     MatInputModule,

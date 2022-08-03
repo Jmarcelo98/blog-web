@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DomSanitizer } from '@angular/platform-browser';
 import { User } from 'src/app/models/user';
+import { AuthorizationService } from 'src/app/services/authorization.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -13,12 +14,11 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class EditProfileModalComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<EditProfileModalComponent>, private userService: UserService,
-    private sanitizer: DomSanitizer, private formBuilder: FormBuilder, private snackBar: MatSnackBar) { }
+  constructor(private userService: UserService,
+    private formBuilder: FormBuilder, private snackBar: MatSnackBar,
+    private dialogRef: MatDialogRef<EditProfileModalComponent>) { }
 
-  userLogged: User = new User();
-
-  defaultImage: string;
+  user: User = new User();
 
   image: any;
 
@@ -26,24 +26,20 @@ export class EditProfileModalComponent implements OnInit {
 
   async ngOnInit() {
 
-    await this.getInfosUserLogged();
-
-    await this.getImage();
-
     this.formUpdate = this.formBuilder.group({
-      profilePicture: [this.userLogged.profilePicture],
-      urlLinkedin: [this.userLogged.urlLinkedin],
-      urlInstagram: [this.userLogged.urlInstagram],
-      urlWebSite: [this.userLogged.urlWebSite],
-      biography: [this.userLogged.biography]
+      profilePicture: [this.user.profilePicture],
+      urlLinkedin: [this.user.urlLinkedin],
+      urlInstagram: [this.user.urlInstagram],
+      urlWebSite: [this.user.urlWebSite],
+      biography: [this.user.biography]
     })
 
   }
 
   async update() {
 
-    await this.userService.updateUser(this.formUpdate.value).toPromise().then( sucesso => {
-      
+    await this.userService.updateUser(this.formUpdate.value).toPromise().then(sucesso => {
+
       this.snackBar.open('Usuário atualizado com sucesso!', '', {
         duration: 4000,
         verticalPosition: 'top',
@@ -51,8 +47,8 @@ export class EditProfileModalComponent implements OnInit {
       });
 
       this.closeModal()
-      
-    }).catch (err => {
+
+    }).catch(err => {
       console.log(err);
     })
 
@@ -60,9 +56,7 @@ export class EditProfileModalComponent implements OnInit {
 
   async updateProfilePictureView() {
 
-    this.userLogged.profilePicture = this.formUpdate.get('profilePicture')?.value
-
-    this.getImage()
+    this.user.profilePicture = this.formUpdate.get('profilePicture')?.value
 
   }
 
@@ -79,32 +73,9 @@ export class EditProfileModalComponent implements OnInit {
     }
   }
 
-  async getInfosUserLogged() {
-
-    await this.userService.getInfosUserLogged().toPromise().then((user) => {
-      this.userLogged = user;
-    }).catch(err => {
-      console.log(err);
-    })
-
-  }
-
-  // buscar imagem do usuario
-  async getImage() {
-
-    this.defaultImage = "../../../../../assets/img/default.png"
-
-    if (this.userLogged.profilePicture == null) {
-      this.image = this.defaultImage
-    } else {
-      let objectURL = 'data:image/png;base64,' + this.userLogged.profilePicture;
-      this.image = this.sanitizer.bypassSecurityTrustUrl(objectURL);
-    }
-
-  }
-
   closeModal() {
     this.dialogRef.close();
   }
+
 
 }

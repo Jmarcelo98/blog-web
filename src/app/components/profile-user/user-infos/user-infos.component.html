@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+
+    <div class="col-5 right">
+
+        <img [src]='image'>
+
+    </div>
+
+    <div class="col-7">
+
+        <div class="row">
+
+            <div class="col-2 nickname">
+                {{user.nickname}}
+            </div>
+
+            <div class="col">
+                <div *ngIf="urlUserIsSameUserLogged() then isSame else notSame"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<ng-template #isSame>
+    <button class="btn btn-outline-primary" (click)="openDialog()">Editar Perfil</button>
+</ng-template>
+
+<ng-template #notSame>
+    <button class="btn btn-primary">Seguir</button>
+</ng-template>

@@ -1,0 +1,15 @@
+img {
+    width: 15em;
+    border-radius: 100%;
+}
+
+.right {
+    text-align: right;
+}
+
+.nickname {
+    text-align: center;
+    font-family: monospace;
+    font-size: 30px;
+    align-self: center;
+}

@@ -3,9 +3,9 @@
   <div class="col-12 col-md-5 centerImg">
     <button title="Atualizar foto" class="btn" (click)="fileInput.click()">
       <input type="file" class="form-control" id="foto" #fileInput (change)="uploadProfilePicture($event)"
-          style="display:none;">
+        style="display:none;">
       <img [src]='image' />
-  </button>
+    </button>
 
     <!-- <img src="{{image}}" alt="Foto de perfil"> -->
   </div>
@@ -15,7 +15,7 @@
     <div class="row">
 
       <div class="col-12">
-        <h1 mat-dialog-title>{{userLogged.name}}</h1>
+        <h1 mat-dialog-title>{{user.name}}</h1>
       </div>
 
     </div>
@@ -25,21 +25,21 @@
       <div class="col-12 center">
         <mat-form-field class="example-full-width input" appearance="outline">
           <mat-label>URL LinkedIn</mat-label>
-          <input [(ngModel)]="userLogged.urlLinkedin" matInput placeholder="Ex. https://www.linkedin.com/in/blogweb/">
+          <input [(ngModel)]="user.urlLinkedin" matInput placeholder="Ex. https://www.linkedin.com/in/blogweb/">
         </mat-form-field>
       </div>
 
       <div class="col-12 center">
         <mat-form-field class="example-full-width input" appearance="outline">
           <mat-label>URL Instagram</mat-label>
-          <input [(ngModel)]="userLogged.urlInstagram" matInput placeholder="Ex. https://www.instagram.com/blogweb/">
+          <input [(ngModel)]="user.urlInstagram" matInput placeholder="Ex. https://www.instagram.com/blogweb/">
         </mat-form-field>
       </div>
 
       <div class="col-12 center">
         <mat-form-field class="example-full-width input" appearance="outline">
           <mat-label>URL WebSite</mat-label>
-          <input [(ngModel)]="userLogged.urlWebSite" matInput placeholder="Ex. https://jmarcelo98.github.io/portfolio/">
+          <input [(ngModel)]="user.urlWebSite" matInput placeholder="Ex. https://jmarcelo98.github.io/portfolio/">
         </mat-form-field>
       </div>
 
@@ -57,7 +57,7 @@
       <p>
         <mat-form-field class="example-full-width input biografia" appearance="outline">
           <mat-label>Biografia</mat-label>
-          <textarea [maxLength]="255" [(ngModel)]="userLogged.biography" matInput
+          <textarea [maxLength]="255" [(ngModel)]="user.biography" matInput
             placeholder="Ex. Apaixonado por programação e Java/Spring Boot"></textarea>
         </mat-form-field>
       </p>
@@ -70,10 +70,9 @@
 <mat-divider></mat-divider>
 
 <div class="row">
-
   <div class="col-6">
     <div mat-dialog-actions>
-      <button mat-button (click)="closeModal()" class="btnClose">Fechar</button>
+      <button mat-button mat-dialog-close class="btnClose">Fechar</button>
     </div>
   </div>
 

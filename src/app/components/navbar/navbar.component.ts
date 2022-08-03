@@ -38,6 +38,8 @@ export class NavbarComponent implements OnInit {
 
     if(!this.authorizationService.isTokenExpired()) {
       await this.isLogged();
+    } else {
+      this.authorizationService.logout()
     }
 
   }

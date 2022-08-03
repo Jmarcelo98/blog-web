@@ -17,19 +17,21 @@ export class UserService {
 
   updateUser(formUpdate: {
     profilePicture: string[], urlLinkedin:
-    string, urlInstagram: string, urlWebSite: string, biography: string}) {
+    string, urlInstagram: string, urlWebSite: string, biography: string
+  }) {
 
     return this.httpClient.patch(`${environment.apiUrl}/users`, formUpdate,
       { headers: this.authorizationService.headersAuth() });
   }
 
-  getInfosUserLogged() {
-    return this.httpClient.get<User>(`${environment.apiUrl}/users`, 
-    { headers: this.authorizationService.headersAuth() })
-  }
+  // getInfosUserLogged() {
+  //   return this.httpClient.get<User>(`${environment.apiUrl}/users`, 
+  //   { headers: this.authorizationService.headersAuth() })
+  // }
 
   getInfosUserPageUrl(nickname: string) {
-    return this.httpClient.get<User>(`${environment.apiUrl}/users/${nickname}`)
+    return this.httpClient.get<User>(`${environment.apiUrl}/users/${nickname}`,
+      { headers: this.authorizationService.headersAuth() })
   }
 
 }

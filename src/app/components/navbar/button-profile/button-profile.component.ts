@@ -1,16 +1,16 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { Router } from '@angular/router';
-import { EditProfileModalComponent } from 'src/app/pages/pages/modal/edit-profile-modal/edit-profile-modal.component';
+import { EditProfileModalComponent } from 'src/app/components/modal/edit-profile-modal/edit-profile-modal.component';
 import { AuthorizationService } from 'src/app/services/authorization.service';
 
 @Component({
-  selector: 'app-edit-profile',
-  templateUrl: './edit-profile.component.html',
-  styleUrls: ['./edit-profile.component.css']
+  selector: 'app-button-profile',
+  templateUrl: './button-profile.component.html',
+  styleUrls: ['./button-profile.component.css']
 })
-export class EditProfileComponent {
+export class ButtonProfileComponent {
 
   constructor(private dialog: MatDialog, private authorizationService: AuthorizationService,
     private router: Router) { }
@@ -21,6 +21,10 @@ export class EditProfileComponent {
     const dialogRef = this.dialog.open(EditProfileModalComponent,
       { disableClose: true, width: '50em' }
     )
+  }
+
+  redirectProfilePageUserLogged() {
+    this.router.navigate(['/user/' + this.authorizationService.getLoggedUser().sub])
   }
 
   logout() {
