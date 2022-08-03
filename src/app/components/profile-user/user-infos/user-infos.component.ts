@@ -36,12 +36,21 @@ export class UserInfosComponent implements OnInit {
   }
 
   async countFollow() {
-    
+
     await this.followService.countFollows(this.user.nickname).toPromise().then(value => {
       this.followCount = value;
     }).catch(err => {
       console.log(err);
     })
+
+  }
+
+  removerCount() {
+    console.log("antes: " + this.followCount.followers);
+    
+    this.followCount.followers -= 1;
+
+    console.log("dps: " + this.followCount.followers);
 
   }
 

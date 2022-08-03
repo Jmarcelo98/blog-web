@@ -13,7 +13,8 @@ export class FollowService {
   constructor(private httpClient: HttpClient, private authorizationService: AuthorizationService) { }
 
   create(nickname: string) {
-    return this.httpClient.post(`${environment.apiUrl}/follower/${nickname}`,
+    // return this.httpClient.post(`${environment.apiUrl}/follower`, login);
+    return this.httpClient.post(`${environment.apiUrl}/follower`, nickname,
       { headers: this.authorizationService.headersAuth() })
   }
 

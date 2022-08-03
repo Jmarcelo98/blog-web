@@ -9,7 +9,7 @@ import { UserInfosComponent } from '../user-infos/user-infos.component';
 })
 export class ButtonFollowComponent implements OnInit {
 
-  constructor(private followService: FollowService, private user: UserInfosComponent) { }
+  constructor(private followService: FollowService, private userInfosComponent: UserInfosComponent) { }
 
   @Input()
   nickname: string
@@ -27,12 +27,13 @@ export class ButtonFollowComponent implements OnInit {
 
   }
 
-  createFollow() {
+  async createFollow() {
 
-    this.followService.create(this.nickname).toPromise().then(create => {
+    await this.followService.create(this.nickname).toPromise().then(create => {
 
       this.isFollow = true
-      // this.teste.followers + 1;
+
+      this.userInfosComponent.followCount.followers += 1; 
 
     }).catch(err => {
       console.log(err);
@@ -46,16 +47,12 @@ export class ButtonFollowComponent implements OnInit {
 
       this.isFollow = false
 
-      this.refreshCountFollow()
+      this.userInfosComponent.followCount.followers -= 1; 
 
     }).catch(err => {
       console.log(err);
     })
 
-  }
-
-  async refreshCountFollow() {
-    await this.user.countFollow()
   }
 
 }
