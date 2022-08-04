@@ -57,7 +57,7 @@
       <p>
         <mat-form-field class="example-full-width input biografia" appearance="outline">
           <mat-label>Biografia</mat-label>
-          <textarea [maxLength]="255" [(ngModel)]="user.biography" matInput
+          <textarea cdkTextareaAutosize [maxLength]="255" [(ngModel)]="user.biography" matInput
             placeholder="Ex. Apaixonado por programação e Java/Spring Boot"></textarea>
         </mat-form-field>
       </p>
