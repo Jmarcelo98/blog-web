@@ -24,9 +24,9 @@
 
 <div class="row urls">
 
-    <div class="col-md-1 col-3">
+    <div *ngIf="user.urlInstagram">
+        <div class="col-md-1 col-3">
 
-        <div *ngIf="user.urlInstagram">
             <a [href]="user.urlInstagram" target="_blank">
                 <img src="../../../../assets/img/icon/instagram.png" alt="Instagram">
             </a>
@@ -34,9 +34,9 @@
 
     </div>
 
-    <div class="col-md-1 col-3">
+    <div *ngIf="user.urlLinkedin">
+        <div class="col-md-1 col-3">
 
-        <div *ngIf="user.urlLinkedin">
             <a [href]="user.urlLinkedin" target="_blank">
                 <img src="../../../../assets/img/icon/linkedin.png" alt="LinkedIn">
             </a>
@@ -44,9 +44,10 @@
 
     </div>
 
-    <div class="col-md-1 col-3">
+    <div *ngIf="user.urlWebSite">
+        
+        <div class="col-md-1 col-3">
 
-        <div *ngIf="user.urlWebSite">
             <a [href]="user.urlWebSite" target="_blank">
                 <img src="../../../../assets/img/icon/webSite.png" alt="WebSite">
             </a>
