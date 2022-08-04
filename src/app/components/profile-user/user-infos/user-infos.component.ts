@@ -45,15 +45,6 @@ export class UserInfosComponent implements OnInit {
 
   }
 
-  removerCount() {
-    console.log("antes: " + this.followCount.followers);
-    
-    this.followCount.followers -= 1;
-
-    console.log("dps: " + this.followCount.followers);
-
-  }
-
   async countPosts() {
 
     await this.postService.countPostsCreated(this.user.nickname).toPromise().then(count => {

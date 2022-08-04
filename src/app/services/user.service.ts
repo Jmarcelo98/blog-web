@@ -20,6 +20,9 @@ export class UserService {
     string, urlInstagram: string, urlWebSite: string, biography: string
   }) {
 
+    console.log(formUpdate);
+    
+
     return this.httpClient.patch(`${environment.apiUrl}/users`, formUpdate,
       { headers: this.authorizationService.headersAuth() });
   }
