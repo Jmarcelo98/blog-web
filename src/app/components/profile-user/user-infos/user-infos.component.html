@@ -50,21 +50,9 @@
         </div>
 
         <div class="row infosNumber">
-            <div class="col-4">
+            <div class="col-12">
                 <app-profile-infos *ngIf="user" [user]="user" ></app-profile-infos>
             </div>
-
-            <!-- <div class="col-5 col-md-2">
-                <app-followers-infos *ngIf="followCount.followers != undefined" [nickname]="user.nickname"
-                    [followers]="followCount.followers">
-                </app-followers-infos>
-            </div>
-
-            <div class="col-4 col-md-2">
-                <app-following-infos *ngIf="followCount.following != undefined" [nickname]="user.nickname"
-                    [following]="followCount.following">
-                </app-following-infos>
-            </div> -->
         </div>
 
     </div>
