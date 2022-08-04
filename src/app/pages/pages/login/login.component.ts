@@ -43,13 +43,20 @@ export class LoginComponent implements OnInit {
 
       }, (error) => {
 
+        if (error.status == 0) {
+          this.snackBar.open('Servidor está fora, aguarde um momento ou contate um administrador!', '', {
+            duration: 5000,
+            verticalPosition: 'top',
+            panelClass: ['yellow-snackbar']
+          });
+        }
+
         if (error.status == 403) {
           this.snackBar.open('Usuário ou senha incorreto!', '', {
             duration: 4000,
             verticalPosition: 'top',
             panelClass: ['red-snackbar']
           });
-
         }
 
       })
