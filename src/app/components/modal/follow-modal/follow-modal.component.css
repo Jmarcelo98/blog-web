@@ -8,7 +8,6 @@ img {
     cursor: pointer;
 }
 
-
 .row {
     border: ridge 1px;
     margin-bottom: 10px;
@@ -24,4 +23,8 @@ img {
 
 .nickname {
     align-self: center;
+}
+
+.notFollow{
+    text-align: center;
 }

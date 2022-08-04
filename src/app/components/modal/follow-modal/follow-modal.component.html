@@ -1,21 +1,44 @@
 <h1 mat-dialog-title>{{titleType}}</h1>
 
 <div mat-dialog-content>
-    <div *ngFor="let item of modalFollow">
-        <div class="row">
 
-            <div class="col-3">
-                <button class="notStyle" (click)="redirectUser(item.nickname)"> 
-                    <img [src]="item.profilePicture" alt="">
-                </button>
+    <div *ngIf="isValueBiggerThenZero then follows else notFollow"></div>
+
+    <ng-template #follows>
+        <div *ngFor="let item of modalFollow">
+            <div class="row">
+
+                <div class="col-3">
+                    <button class="notStyle" (click)="redirectUser(item.nickname)">
+                        <img [src]="item.profilePicture" alt="">
+                    </button>
+                </div>
+
+                <div class="col-9 nickname">
+                    {{item.nickname}}
+                </div>
+
             </div>
-
-            <div class="col-9 nickname">
-                {{item.nickname}}
-            </div>
-
         </div>
-    </div>
+    </ng-template>
+
+    <ng-template #notFollow>
+
+        <div *ngIf="typeFollow == 'following' then notSegue else notSeguindo"></div>
+
+        <ng-template #notSegue>
+            <div class="notFollow">
+                <span>Não está seguindo ninguém!</span>
+            </div>
+        </ng-template>
+
+        <ng-template #notSeguindo>
+            <div class="notFollow">
+                <span>Não possui seguidores!</span>
+            </div>
+        </ng-template>
+
+    </ng-template>
 
 </div>
 

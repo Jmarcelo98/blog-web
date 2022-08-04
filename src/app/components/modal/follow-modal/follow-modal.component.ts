@@ -23,12 +23,16 @@ export class FollowModalComponent implements OnInit {
 
   modalFollow: ModalFollow[];
 
+  isValueBiggerThenZero: boolean
+
+
   async ngOnInit() {
 
     if (this.typeFollow == "following") {
       this.titleType = "Seguindo"
     } else {
       this.titleType = "Seguidores"
+
     }
 
     await this.getAllFollowing()
@@ -51,8 +55,14 @@ export class FollowModalComponent implements OnInit {
   async getAllFollowing() {
 
     await this.followService.getAllFollow(this.typeFollow, this.nickname).toPromise().then(value => {
+        this.modalFollow = value
 
-      this.modalFollow = value
+        if(this.modalFollow.length > 0) {
+          this.isValueBiggerThenZero = true
+        } else {
+          this.isValueBiggerThenZero = false
+        }
+       
 
     }).catch(err => {
       console.log(err);
