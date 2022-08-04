@@ -28,4 +28,8 @@ export class MiniaturaPostComponent implements OnInit {
     
   }
 
+  teste() {
+    alert("teste")
+  }
+
 }

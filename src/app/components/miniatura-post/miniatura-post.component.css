@@ -1,4 +1,34 @@
-.example-card {
-    max-width: 400px;
-    margin-bottom: 8px;
+img {
+    width: 80px;
+    height: 80px;
+    border-radius: 20%;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+mat-card {
+    height: 170px;
+}
+
+mat-card-subtitle {
+    font-size: 12px;
+}
+
+.publishedAt {
+    font-size: 10px;
+}
+
+.spaceContent {
+    margin-top: 10px;
+}
+
+.mgBtn {
+    margin-bottom: 10px;
+}
+
+.link {
+    text-decoration: dashed;
 }
