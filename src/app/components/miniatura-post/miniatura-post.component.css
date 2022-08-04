@@ -11,10 +11,20 @@ button {
 
 mat-card {
     height: 170px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px !important;
 }
 
 mat-card-subtitle {
     font-size: 12px;
+}
+
+mat-icon {
+    font-size: 65px !important;
+}
+
+#morePosts {
+    margin-top: 20px;
+    text-align: center;
 }
 
 .publishedAt {
@@ -26,7 +36,7 @@ mat-card-subtitle {
 }
 
 .mgBtn {
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 .link {

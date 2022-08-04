@@ -1,6 +1,6 @@
 <div class="row">
 
-    <div class="col-md-4 col-12 mgBtn" *ngFor="let item of posts">
+    <div class="col-md-6 col-12 mgBtn" *ngFor="let item of posts">
 
         <mat-card class="example-card">
 
@@ -28,12 +28,11 @@
 
                 <div class="col-12">
 
-                    {{ (item.content.length>73)? (item.content | slice:0:73) + '...': (item.content) }}
+                    {{ (item.content.length>100)? (item.content | slice:0:100) + '...': (item.content) }}
 
-                    <a href="/post/{{item.id}}">
-                        <!-- <button class="link" (click)="teste()"> -->
-                            ver mais
-                        <!-- </button> -->
+                    <a href="/post/{{item.id}}" target="_blank">
+                        <span *ngIf="item.content.length > 100">ver mais</span>
+                        <span *ngIf="item.content.length <= 100">Ver post</span>
                     </a>
 
                 </div>
@@ -50,6 +49,19 @@
 
         </mat-card>
 
+    </div>
+
+</div>
+
+<div *ngIf="posts.length < postsCreated" class="row">
+
+    <div class="col-12">
+        <div id="morePosts">
+            <button class="btn btnLoginLogout" title="Carregar mais posts" (click)="morePosts()" mat-icon-button matSuffix>
+                <mat-icon>{{'playlist_add'}}</mat-icon>
+            </button>
+            <!-- <h2>CARREGAR MAIS POSTS</h2> -->
+        </div>
     </div>
 
 </div>

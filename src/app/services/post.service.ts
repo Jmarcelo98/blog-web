@@ -16,10 +16,10 @@ export class PostService {
       { headers: this.authorizationService.headersAuth() })
   }
 
-  findAllByUser(nickname: string, page: number) {
+  findAllByUser(nickname: string, itensPerPage: number) {
     return this.httpClient.get<Post[]>(`${environment.apiUrl}/posts/${nickname}`,
       { headers: this.authorizationService.headersAuth(),
-         params: { pagina: page - 1, itensPerPage: 5 } } ,
+         params: { pagina: 0, itensPerPage: itensPerPage } } ,
     )
   }
 

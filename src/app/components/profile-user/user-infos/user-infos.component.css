@@ -3,6 +3,11 @@ img {
     border-radius: 100%;
 }
 
+h1 {
+    text-align-last: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 #spaceToPost {
     margin-top: 25px;
     margin-bottom: 45px;

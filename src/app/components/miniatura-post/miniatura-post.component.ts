@@ -14,22 +14,36 @@ export class MiniaturaPostComponent implements OnInit {
   @Input()
   nickname: string
 
+  @Input()
+  postsCreated: number
+
+  itensPerPage: number = 4
+
   posts: Post[]
 
   async ngOnInit() {
 
-    await this.postService.findAllByUser(this.nickname, 0).toPromise().then(post => {
+    await this.findAllByUser()
+
+  }
+
+  async findAllByUser() {
+    await this.postService.findAllByUser(this.nickname, this.itensPerPage).toPromise().then(post => {
 
       this.posts = post
 
     }).catch(err => {
       console.log(err);
     })
-    
   }
 
-  teste() {
-    alert("teste")
+  async morePosts() {
+
+    if (this.posts.length < this.postsCreated) {
+      this.itensPerPage += 2;
+      await this.findAllByUser()
+    }
+
   }
 
 }
