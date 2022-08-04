@@ -10,6 +10,7 @@ import { jwtConfig } from './config/jwt-config';
 import { PagesModule } from './pages/pages/pages.module';
 import { NavbarModule } from './components/navbar/navbar.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,7 @@ import { NavbarModule } from './components/navbar/navbar.module';
     HttpClientModule,
     JwtModule.forRoot(jwtConfig),
     PagesModule,
-    NavbarModule
+    NavbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

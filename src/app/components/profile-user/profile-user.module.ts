@@ -10,6 +10,7 @@ import { FollowingInfosComponent } from './following-infos/following-infos.compo
 import { MatDividerModule } from '@angular/material/divider';
 import { ButtonFollowComponent } from './button-follow/button-follow.component';
 import { ProfileInfosComponent } from './profile-infos/profile-infos.component';
+import { MiniaturaPostModule } from '../miniatura-post/miniatura-post.module';
 
 @NgModule({
   declarations: [
@@ -22,17 +23,14 @@ import { ProfileInfosComponent } from './profile-infos/profile-infos.component';
   ],
   exports: [
     UserInfosComponent,
-    PostInfosComponent,
-    FollowersInfosComponent,
-    FollowingInfosComponent,
-    ButtonFollowComponent
   ],
   imports: [
     CommonModule,
     ModalModule,
     NavbarModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    MiniaturaPostModule
   ],
 })
 export class ProfileUserModule { }

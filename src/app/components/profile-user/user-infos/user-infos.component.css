@@ -3,13 +3,14 @@ img {
     border-radius: 100%;
 }
 
+#spaceToPost {
+    margin-top: 25px;
+}
+
 .right {
     text-align: right;
 }
 
-/* .btnEditAndFollow {
-    text-align: left;
-} */
 
 .infosNumber {
     margin-top: 20px;
