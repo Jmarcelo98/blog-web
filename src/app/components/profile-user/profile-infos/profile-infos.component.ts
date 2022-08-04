@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 
 @Component({
@@ -9,15 +8,8 @@ import { User } from 'src/app/models/user';
 })
 export class ProfileInfosComponent {
 
-  constructor(private route: Router) { }
+  constructor() { }
 
   @Input()
   user: User
-
-  linkExternal(link: string) {
-
-    this.route.navigate([link])
-
-  }
-
 }
