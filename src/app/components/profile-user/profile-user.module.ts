@@ -9,6 +9,7 @@ import { FollowersInfosComponent } from './followers-infos/followers-infos.compo
 import { FollowingInfosComponent } from './following-infos/following-infos.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { ButtonFollowComponent } from './button-follow/button-follow.component';
+import { ProfileInfosComponent } from './profile-infos/profile-infos.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ButtonFollowComponent } from './button-follow/button-follow.component';
     PostInfosComponent,
     FollowersInfosComponent,
     FollowingInfosComponent,
-    ButtonFollowComponent
+    ButtonFollowComponent,
+    ProfileInfosComponent
   ],
   exports: [
     UserInfosComponent,
