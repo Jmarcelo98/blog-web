@@ -7,3 +7,8 @@
 .center {
     place-items: center
 }
+
+.date {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: right;
+}

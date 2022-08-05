@@ -1,15 +1,15 @@
 <div class="row border center" *ngFor="let item of comments">
 
-    <div class="col-1">
+    <div class="col-md-1 col-2">
         <app-user-comment [user]="item.user"></app-user-comment>
     </div>
 
-    <div class="col-9">
+    <div class="col-md-9 col-7">
         {{item.comment}}
     </div>
     
-    <div class="col-1">
-        {{item.createdAt | date: 'dd/MM/yyyy'}}
+    <div class="col-md-2 col-2 date">
+        {{item.createdAt | date: 'dd/MM/yy'}}
     </div>
 
 </div>
