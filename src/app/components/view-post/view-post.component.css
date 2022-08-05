@@ -1,0 +1,28 @@
+mat-card-content {
+    margin-top: 40px;
+}
+
+.centerDescription {
+    align-self: center;
+}
+
+.spaceDivider {
+    margin-top: 10px
+}
+
+.example-card {
+    margin-top: 10px;
+    max-width: 750px;
+}
+
+.titlePost {
+    text-align: center;
+}
+
+.container {
+    text-align: -webkit-center;
+}
+
+/* img {
+    width: 50%;
+} */

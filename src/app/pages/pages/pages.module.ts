@@ -19,7 +19,7 @@ import { ProfileUserModule } from 'src/app/components/profile-user/profile-user.
 import { UserComponent } from './user/user.component';
 import { ModalModule } from 'src/app/components/modal/modal.module';
 import { PostComponent } from './post/post.component';
-import { PostCreatedModule } from 'src/app/components/post-created/post-created.module';
+import { ViewPostModule } from 'src/app/components/view-post/view-post.module';
 
 @NgModule({
   declarations: [
@@ -34,9 +34,9 @@ import { PostCreatedModule } from 'src/app/components/post-created/post-created.
     FormsModule,
     SignUpModule,
     SharedModule,
+    ViewPostModule,
     ProfileUserModule,
     ModalModule,
-    PostCreatedModule,
     ReactiveFormsModule,
     MatCardModule,
     MatInputModule,

@@ -9,6 +9,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { jwtConfig } from './config/jwt-config';
 import { PagesModule } from './pages/pages/pages.module';
 import { NavbarModule } from './components/navbar/navbar.module';
+import { ViewPostComponent } from './components/view-post/view-post.component';
 
 @NgModule({
   declarations: [

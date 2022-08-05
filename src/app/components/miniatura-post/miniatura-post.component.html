@@ -30,7 +30,7 @@
 
                     {{ (item.content.length>100)? (item.content | slice:0:100) + '...': (item.content) }}
 
-                    <a href="/post/{{item.id}}" target="_blank">
+                    <a href="/post/{{item.id}}">
                         <span *ngIf="item.content.length > 100">ver mais</span>
                         <span *ngIf="item.content.length <= 100">Ver post</span>
                     </a>

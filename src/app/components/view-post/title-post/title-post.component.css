@@ -1,0 +1,10 @@
+mat-card-title {
+    text-align: center;
+    padding: 15px;
+}
+
+mat-card-subtitle {
+    margin-top: 25px !important;
+    color: black !important;
+    text-align: start;
+}

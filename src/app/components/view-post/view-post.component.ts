@@ -4,11 +4,11 @@ import { Post } from 'src/app/models/post';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
-  selector: 'app-post-created',
-  templateUrl: './post-created.component.html',
-  styleUrls: ['./post-created.component.css']
+  selector: 'app-view-post',
+  templateUrl: './view-post.component.html',
+  styleUrls: ['./view-post.component.css']
 })
-export class PostCreatedComponent implements OnInit {
+export class ViewPostComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private postService: PostService) { }
 
@@ -23,19 +23,18 @@ export class PostCreatedComponent implements OnInit {
     await this.findById();
 
     console.log(this.post);
-    
 
   }
-  
+
   async findById() {
 
-    this.postService.findById(this.idPost).toPromise().then ( pst => {
+    this.postService.findById(this.idPost).toPromise().then(pst => {
 
       this.post = pst
 
     }).catch(err => {
       console.log(err)
-    }) 
+    })
 
   }
 
