@@ -17,6 +17,8 @@ export class MiniaturaPostComponent implements OnInit {
   @Input()
   postsCreated: number
 
+  sizeListPost: number
+
   itensPerPage: number = 4
 
   posts: Post[]
@@ -31,6 +33,7 @@ export class MiniaturaPostComponent implements OnInit {
     await this.postService.findAllByUser(this.nickname, this.itensPerPage).toPromise().then(post => {
 
       this.posts = post
+      this.sizeListPost = post.length
 
     }).catch(err => {
       console.log(err);

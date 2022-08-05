@@ -53,14 +53,13 @@
 
 </div>
 
-<div *ngIf="posts.length < postsCreated" class="row">
+<div *ngIf="sizeListPost < postsCreated" class="row">
 
     <div class="col-12">
         <div id="morePosts">
             <button class="btn btnLoginLogout" title="Carregar mais posts" (click)="morePosts()" mat-icon-button matSuffix>
                 <mat-icon>{{'playlist_add'}}</mat-icon>
             </button>
-            <!-- <h2>CARREGAR MAIS POSTS</h2> -->
         </div>
     </div>
 

@@ -18,13 +18,16 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ProfileUserModule } from 'src/app/components/profile-user/profile-user.module';
 import { UserComponent } from './user/user.component';
 import { ModalModule } from 'src/app/components/modal/modal.module';
+import { PostComponent } from './post/post.component';
+import { PostCreatedModule } from 'src/app/components/post-created/post-created.module';
 
 @NgModule({
   declarations: [
     HomeComponent,
     LoginComponent,
     SignUpComponent,
-    UserComponent
+    UserComponent,
+    PostComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +36,7 @@ import { ModalModule } from 'src/app/components/modal/modal.module';
     SharedModule,
     ProfileUserModule,
     ModalModule,
+    PostCreatedModule,
     ReactiveFormsModule,
     MatCardModule,
     MatInputModule,
