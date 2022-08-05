@@ -1,0 +1,9 @@
+.border {
+    border: solid 1px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.center {
+    place-items: center
+}

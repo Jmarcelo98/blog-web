@@ -22,8 +22,6 @@ export class ViewPostComponent implements OnInit {
 
     await this.findById();
 
-    console.log(this.post);
-
   }
 
   async findById() {

@@ -7,6 +7,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { ImgPostComponent } from './img-post/img-post.component';
 import { ContentPostComponent } from './content-post/content-post.component';
 import { DescriptionPostComponent } from './description-post/description-post.component';
+import { CommentModule } from '../comment/comment.module';
 
 
 
@@ -15,6 +16,7 @@ import { DescriptionPostComponent } from './description-post/description-post.co
   exports: [ViewPostComponent],
   imports: [
     CommonModule,
+    CommentModule,
     MatCardModule,
     MatDividerModule
   ]

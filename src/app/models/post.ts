@@ -1,4 +1,5 @@
 import { Category } from "./category";
+import { CommentClass } from "./comment";
 
 export class Post {
     id: number;
@@ -11,4 +12,5 @@ export class Post {
     createdAt: Date;
     updatedAt: Date
     category: Category
+    comments: CommentClass[]
 }

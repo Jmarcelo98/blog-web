@@ -9,7 +9,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { jwtConfig } from './config/jwt-config';
 import { PagesModule } from './pages/pages/pages.module';
 import { NavbarModule } from './components/navbar/navbar.module';
-import { ViewPostComponent } from './components/view-post/view-post.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -18,6 +18,7 @@ import { ViewPostComponent } from './components/view-post/view-post.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularEditorModule,
     BrowserAnimationsModule,
     HttpClientModule,
     JwtModule.forRoot(jwtConfig),

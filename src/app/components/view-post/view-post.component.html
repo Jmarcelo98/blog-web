@@ -16,18 +16,21 @@
 
             <div class="col-4">
                 <app-img-post></app-img-post>
-
             </div>
         </div>
 
         <mat-card-content>
             <app-content-post [post]="post"></app-content-post>
         </mat-card-content>
-        <!-- 
+
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+
         <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
+            <h2>Comentários</h2>
+            <app-comment *ngIf="post.comments" [comments]="post.comments"></app-comment>
         </mat-card-actions>
-         -->
+
     </mat-card>
 </div>
