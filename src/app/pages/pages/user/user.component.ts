@@ -13,8 +13,6 @@ export class UserComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private userService: UserService, private domSanitizer: DomSanitizer) { }
 
-  image: any
-
   user: User = new User();
 
   nickNameUrl = this.activatedRoute.snapshot.paramMap.get('nickname');
@@ -41,10 +39,10 @@ export class UserComponent implements OnInit {
   async getImage() {
 
     if (this.user.profilePicture == null) {
-      this.image = "../../../../assets/img/default.png"
+      this.user.profilePicture = "../../../../assets/img/default.png"
     } else {
       let objectURL = 'data:image/png;base64,' + this.user.profilePicture;
-      this.image = this.domSanitizer.bypassSecurityTrustUrl(objectURL);
+      this.user.profilePicture = this.domSanitizer.bypassSecurityTrustUrl(objectURL);
     }
 
   }

@@ -20,7 +20,7 @@ export class EditProfileModalComponent implements OnInit {
 
   user: User = new User();
 
-  image: any;
+  image: any
 
   formUpdate = this.formBuilder.group({});
 
@@ -28,11 +28,9 @@ export class EditProfileModalComponent implements OnInit {
 
     this.formUpdate = this.formBuilder.group({
       profilePicture: [this.user.profilePicture],
-      // urlLinkedin: [this.user.urlLinkedin],
-      // urlInstagram: [this.user.urlInstagram],
-      // urlWebSite: [this.user.urlWebSite],
-      // biography: [this.user.biography]
     })
+
+    this.image = this.user.profilePicture
 
   }
 

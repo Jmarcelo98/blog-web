@@ -4,7 +4,7 @@
     <button title="Atualizar foto" class="btn" (click)="fileInput.click()">
       <input type="file" class="form-control" id="foto" #fileInput (change)="uploadProfilePicture($event)"
         style="display:none;">
-      <img [src]='image' />
+      <img [src]="image" />
     </button>
 
     <!-- <img src="{{image}}" alt="Foto de perfil"> -->

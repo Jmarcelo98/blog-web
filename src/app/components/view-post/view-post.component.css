@@ -14,8 +14,12 @@ mat-card-actions {
 
 .createdFooter {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 10px;
 }
 
+.tittleComment {
+    padding-top: 10px;
+}
 
 .centerDescription {
     align-self: center;

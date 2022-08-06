@@ -1,7 +1,7 @@
 export class User {
     nickname: string;
     name: string;
-    profilePicture: string[];
+    profilePicture: any;
     isPremium: boolean;
     biography: string;
     updatedAt: Date;

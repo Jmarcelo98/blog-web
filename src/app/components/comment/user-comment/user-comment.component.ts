@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { User } from 'src/app/models/user';
 
 @Component({
@@ -8,12 +9,25 @@ import { User } from 'src/app/models/user';
 })
 export class UserCommentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private domSanitizer: DomSanitizer) { }
 
   @Input()
   user: User
 
-  ngOnInit(): void {
+  async ngOnInit() {
+
+    await this.getImage()
+
   }
 
+  async getImage() {
+
+    if (this.user.profilePicture == null) {
+      this.user.profilePicture = "../../../../assets/img/default.png";
+    } else {
+      let objectURL = 'data:image/png;base64,' + this.user.profilePicture;
+      this.user.profilePicture = this.domSanitizer.bypassSecurityTrustUrl(objectURL);
+    }
+
+  }
 }

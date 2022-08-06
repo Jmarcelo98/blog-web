@@ -20,17 +20,9 @@ export class UserService {
     string, urlInstagram: string, urlWebSite: string, biography: string
   }) {
 
-    console.log(formUpdate);
-    
-
     return this.httpClient.patch(`${environment.apiUrl}/users`, formUpdate,
       { headers: this.authorizationService.headersAuth() });
   }
-
-  // getInfosUserLogged() {
-  //   return this.httpClient.get<User>(`${environment.apiUrl}/users`, 
-  //   { headers: this.authorizationService.headersAuth() })
-  // }
 
   getInfosUserPageUrl(nickname: string) {
     return this.httpClient.get<User>(`${environment.apiUrl}/users/${nickname}`,

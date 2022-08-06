@@ -65,7 +65,6 @@ export class UserInfosComponent implements OnInit {
       { disableClose: true, width: '50em' }
     )
     dialogRef.componentInstance.user = this.user
-    dialogRef.componentInstance.image = this.image
   }
 
 

@@ -26,7 +26,7 @@ export class MiniaturaPostComponent implements OnInit {
   async ngOnInit() {
 
     await this.findAllByUser()
-
+    
   }
 
   async findAllByUser() {
