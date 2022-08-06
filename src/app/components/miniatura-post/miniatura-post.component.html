@@ -39,12 +39,8 @@
 
             </div>
 
-            <div class="row">
-
-                <div class="col-12 publishedAt">
-                    Publicado em: {{item.publishedAt | date: 'dd/MM/yyyy'}}
-                </div>
-
+            <div class="col-12 publishedAt">
+                Publicado em: {{item.publishedAt | date: 'dd/MM/yyyy'}}
             </div>
 
         </mat-card>
@@ -57,7 +53,8 @@
 
     <div class="col-12">
         <div id="morePosts">
-            <button class="btn btnLoginLogout" title="Carregar mais posts" (click)="morePosts()" mat-icon-button matSuffix>
+            <button class="btn btnLoginLogout" title="Carregar mais posts" (click)="morePosts()" mat-icon-button
+                matSuffix>
                 <mat-icon>{{'playlist_add'}}</mat-icon>
             </button>
         </div>

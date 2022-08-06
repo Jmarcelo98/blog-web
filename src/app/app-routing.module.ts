@@ -5,8 +5,8 @@ import { HomeComponent } from './pages/pages/home/home.component';
 import { SignUpComponent } from './pages/pages/sign-up/sign-up.component';
 import { UserComponent } from './pages/pages/user/user.component';
 import { AuthGuardService } from './services/auth-guard.service';
-import { PostComponent } from './pages/pages/post/post.component';
 import { ViewPostComponent } from './components/view-post/view-post.component';
+import { CreatePostComponent } from './components/create-post/create-post.component';
 
 const routes: Routes = [
 
@@ -23,14 +23,20 @@ const routes: Routes = [
     component: SignUpComponent
   },
   {
-    path: 'user/:nickname',
+    path: ':nickname',
     component: UserComponent,
     canActivate: [AuthGuardService],
     canActivateChild: [AuthGuardService]
   },
   {
     path: 'post/:id',
-    component: ViewPostComponent, 
+    component: ViewPostComponent,
+    canActivate: [AuthGuardService],
+    canActivateChild: [AuthGuardService]
+  },
+  {
+    path: "novo-post",
+    component: CreatePostComponent,
     canActivate: [AuthGuardService],
     canActivateChild: [AuthGuardService]
   }

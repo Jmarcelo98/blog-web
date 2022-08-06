@@ -8,6 +8,8 @@ import { ButtonProfileComponent } from './button-profile/button-profile.componen
 import { ButtonLoginComponent } from './button-login/button-login.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { SharedModule } from '../shared/shared.module';
+import { CreatePostComponent } from '../create-post/create-post.component';
+import { CreatePostModule } from '../create-post/create-post.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
+    CreatePostModule,
     MatIconModule,
     MatMenuModule,
     MatDialogModule,

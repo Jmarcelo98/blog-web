@@ -10,6 +10,7 @@ import { jwtConfig } from './config/jwt-config';
 import { PagesModule } from './pages/pages/pages.module';
 import { NavbarModule } from './components/navbar/navbar.module';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { CreatePostComponent } from './components/create-post/create-post.component';
 
 @NgModule({
   declarations: [
