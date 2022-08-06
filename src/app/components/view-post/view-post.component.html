@@ -23,14 +23,14 @@
             <app-content-post [post]="post"></app-content-post>
         </mat-card-content>
 
-        <mat-divider></mat-divider>
-        <mat-divider></mat-divider>
-        <mat-divider></mat-divider>
+        <mat-divider *ngIf="post.comments.length > 0"></mat-divider>
 
-        <mat-card-actions>
+        <mat-card-actions *ngIf="post.comments.length > 0" class="custom">
             <h2>Comentários</h2>
             <app-comment *ngIf="post.comments" [comments]="post.comments"></app-comment>
         </mat-card-actions>
+
+        <span class="createdFooter"><i>Post criado em {{post.createdAt | date: 'dd/MM/yyyy'}}</i></span>
 
     </mat-card>
 </div>

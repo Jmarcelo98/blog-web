@@ -1,11 +1,15 @@
 .border {
     border: solid 1px;
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .center {
     place-items: center
+} 
+
+.comment {
+    text-align: start;
 }
 
 .date {

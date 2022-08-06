@@ -2,6 +2,21 @@ mat-card-content {
     margin-top: 40px;
 }
 
+mat-card-actions {
+    background-color: #e7e7e770;
+}
+
+.custom.mat-card-actions {
+    padding: 0px !important;
+    margin-left: -16px;
+    margin-right: -16px;
+}
+
+.createdFooter {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
 .centerDescription {
     align-self: center;
 }
@@ -22,7 +37,3 @@ mat-card-content {
 .container {
     text-align: -webkit-center;
 }
-
-/* img {
-    width: 50%;
-} */
