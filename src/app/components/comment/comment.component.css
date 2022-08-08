@@ -4,6 +4,10 @@
     margin-bottom: 10px;
 }
 
+.bodyComment{
+    background-color: #e7e7e770;
+}
+
 .center {
     place-items: center
 } 

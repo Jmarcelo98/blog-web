@@ -26,8 +26,8 @@
         <mat-divider *ngIf="post.comments.length > 0"></mat-divider>
 
         <mat-card-actions *ngIf="post.comments.length > 0" class="custom">
-            <mat-card-title class="tittleComment">Comentários</mat-card-title>
-            <app-comment *ngIf="post.comments" [comments]="post.comments"></app-comment>
+            <!-- <mat-card-title class="tittleComment">Comentários</mat-card-title> -->
+            <app-comment [post]="post"></app-comment>
         </mat-card-actions>
 
         <hr *ngIf="post.comments.length == 0">

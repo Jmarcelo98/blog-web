@@ -1,4 +1,6 @@
-<div class="row border center" *ngFor="let item of comments">
+<app-create-comment [post]="post"></app-create-comment>
+
+<div class="row border center bodyComment" *ngFor="let item of post.comments">
 
     <div class="col-md-1 col-2">
         <app-user-comment [user]="item.user"></app-user-comment>
@@ -7,7 +9,7 @@
     <div class="col-md-9 col-7 comment">
         {{item.comment}}
     </div>
-    
+
     <div class="col-md-2 col-2 date">
         {{item.createdAt | date: 'dd/MM/yy'}}
     </div>

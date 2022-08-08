@@ -5,8 +5,8 @@ import { HomeComponent } from './pages/pages/home/home.component';
 import { SignUpComponent } from './pages/pages/sign-up/sign-up.component';
 import { UserComponent } from './pages/pages/user/user.component';
 import { AuthGuardService } from './services/auth-guard.service';
-import { ViewPostComponent } from './components/view-post/view-post.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
+import { PostComponent } from './pages/pages/post/post.component';
 
 const routes: Routes = [
 
@@ -30,7 +30,7 @@ const routes: Routes = [
   },
   {
     path: 'post/:id',
-    component: ViewPostComponent,
+    component: PostComponent,
     canActivate: [AuthGuardService],
     canActivateChild: [AuthGuardService]
   },

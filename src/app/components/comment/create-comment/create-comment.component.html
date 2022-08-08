@@ -1,0 +1,19 @@
+<h3>Criar comentário</h3>
+
+<div class="row">
+
+    <div class="col">
+
+        <form [formGroup]="commentForm">
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Comentário</mat-label>
+                <input matInput placeholder="Ex. Excelente post! O conteúdo foi muito bem descrito"
+                    formControlName="comment">
+                <mat-error validate controlName="nickname">Usuário é obrigatório</mat-error>
+            </mat-form-field>
+
+        </form>
+    </div>
+
+</div>

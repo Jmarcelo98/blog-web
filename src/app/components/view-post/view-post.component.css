@@ -2,10 +2,6 @@ mat-card-content {
     margin-top: 40px;
 }
 
-mat-card-actions {
-    background-color: #e7e7e770;
-}
-
 .custom.mat-card-actions {
     padding: 0px !important;
     margin-left: -16px;

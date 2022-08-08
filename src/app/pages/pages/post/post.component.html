@@ -1,5 +1,5 @@
 <div class="container">
 
-    <app-view-post></app-view-post>
+    <app-view-post *ngIf="post.id" [post]="post"></app-view-post>
 
 </div>
