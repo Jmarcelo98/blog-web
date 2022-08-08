@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Post } from 'src/app/models/post';
-import { AuthorizationService } from 'src/app/services/authorization.service';
+import { CommentService } from 'src/app/services/comment.service';
 
 @Component({
   selector: 'app-create-comment',
@@ -10,7 +10,7 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
 })
 export class CreateCommentComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private authorizationService: AuthorizationService) { }
+  constructor(private formBuilder: FormBuilder, private commentService: CommentService) { }
 
   @Input()
   post: Post
@@ -21,9 +21,27 @@ export class CreateCommentComponent implements OnInit {
 
     this.commentForm = this.formBuilder.group({
       comment: [null, [Validators.required]],
-      post: [this.post, [Validators.required]],
-      idUser: [this.authorizationService.getLoggedUser().sub]
+      idPost: [this.post.id, [Validators.required]],
     })
+
+  }
+
+  createComment() {
+
+    this.commentForm.markAllAsTouched();
+
+    if (this.commentForm.valid) {
+
+      this.commentService.createComment(this.commentForm.value).toPromise().then(suc => {
+
+        console.log("criado");
+        
+
+      }).catch(err => {
+        console.log(err);
+      })
+
+    }
 
   }
 

@@ -6,3 +6,12 @@ h3 {
     margin-top: 25px !important;
     margin-bottom: 5px;
 }
+
+.btnCreate {
+    width: 90%;
+    float: left;
+}
+
+.positionBtn {
+    margin-top: 10px;
+}
