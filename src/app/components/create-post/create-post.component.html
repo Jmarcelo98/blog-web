@@ -1,0 +1,66 @@
+<form [formGroup]="postForm">
+    <mat-card class="example-card">
+
+        <mat-card-content>
+
+            <div class="row">
+
+                <div class="col-4">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Título</mat-label>
+                        <input matInput placeholder="Ex. Importância da Tecnologia" maxlength="33"
+                            formControlName="title">
+                        <mat-error validate controlName="title">Título é obrigatório</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-8">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Descrição</mat-label>
+                        <input matInput placeholder="Ex. Importância da Tecnologia" maxlength="70"
+                            formControlName="description">
+                        <mat-error validate controlName="description">Descrição é obrigatório</mat-error>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <!-- <div class="row">
+                
+            </div> -->
+
+            <div class="row">
+
+                <div class="col-md-6 col-12">
+                    <input type="file" class="form-control" id="foto" #fileInput
+                        (change)="uploadProfilePicture($event)">
+                    <mat-error *ngIf="postForm.get('thumbnail')?.hasError('nullThumb')" validate
+                        controlName="thumbnail">
+                        Miniatura é obrigatória</mat-error>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="example-margin">Publicar agora:</label>
+                    <mat-radio-group formControlName="isPublished">
+                        <mat-radio-button class="example-margin" [checked]='true' value="true">Sim</mat-radio-button>
+                        <mat-radio-button class="example-margin" value="false">Não</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- <mat-label>Conteúdo</mat-label> -->
+                <angular-editor formControlName="content" placeholder="Conteúdo do Post" [config]="config">
+                </angular-editor>
+                <mat-error *ngIf="postForm.get('content')?.hasError('nullContent')" validate controlName="thumbnail">
+                    Conteúdo é obrigatório</mat-error>
+                <!-- <mat-error validate controlName="content">Descrição é obrigatório</mat-error> -->
+            </div>
+
+
+        </mat-card-content>
+
+        <button class="btn btn-outline-primary" (click)="criarPost()">Criar Post</button>
+
+    </mat-card>
+</form>

@@ -23,6 +23,7 @@ import { ViewPostModule } from 'src/app/components/view-post/view-post.module';
 
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NewPostComponent } from './new-post/new-post.component';
+import { CreatePostModule } from 'src/app/components/create-post/create-post.module';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { NewPostComponent } from './new-post/new-post.component';
     SharedModule,
     ViewPostModule,
     ProfileUserModule,
+    CreatePostModule,
     ModalModule,
     ReactiveFormsModule,
     MatCardModule,

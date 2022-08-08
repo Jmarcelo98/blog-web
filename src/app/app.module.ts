@@ -9,16 +9,14 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { jwtConfig } from './config/jwt-config';
 import { PagesModule } from './pages/pages/pages.module';
 import { NavbarModule } from './components/navbar/navbar.module';
-import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularEditorModule,
     BrowserAnimationsModule,
     HttpClientModule,
     JwtModule.forRoot(jwtConfig),
