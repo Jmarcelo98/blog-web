@@ -20,7 +20,7 @@ export class CreateCommentComponent implements OnInit {
   ngOnInit(): void {
 
     this.commentForm = this.formBuilder.group({
-      comment: [null, [Validators.required]],
+      comment: [null, [Validators.required, Validators.minLength(9)]],
       idPost: [this.post.id, [Validators.required]],
     })
 
@@ -34,8 +34,7 @@ export class CreateCommentComponent implements OnInit {
 
       this.commentService.createComment(this.commentForm.value).toPromise().then(suc => {
 
-        console.log("criado");
-        
+        window.location.reload()
 
       }).catch(err => {
         console.log(err);

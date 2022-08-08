@@ -8,19 +8,17 @@ import { ButtonProfileComponent } from './button-profile/button-profile.componen
 import { ButtonLoginComponent } from './button-login/button-login.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { SharedModule } from '../shared/shared.module';
-import { CreatePostComponent } from '../create-post/create-post.component';
-import { CreatePostModule } from '../create-post/create-post.module';
+import { ButtonNewPostComponent } from './button-new-post/button-new-post.component';
 
 @NgModule({
   declarations: [
-    NavbarComponent, ButtonProfileComponent, ButtonLoginComponent, ButtonProfileComponent
+    NavbarComponent, ButtonProfileComponent, ButtonLoginComponent, ButtonProfileComponent, ButtonNewPostComponent
   ],
   exports: [
-    NavbarComponent, ButtonProfileComponent, ButtonLoginComponent, ButtonProfileComponent
+    NavbarComponent, ButtonProfileComponent, ButtonLoginComponent, ButtonProfileComponent, ButtonNewPostComponent
   ],
   imports: [
     CommonModule,
-    CreatePostModule,
     MatIconModule,
     MatMenuModule,
     MatDialogModule,

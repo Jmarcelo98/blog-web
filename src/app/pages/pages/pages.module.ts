@@ -21,13 +21,18 @@ import { ModalModule } from 'src/app/components/modal/modal.module';
 import { PostComponent } from './post/post.component';
 import { ViewPostModule } from 'src/app/components/view-post/view-post.module';
 
+import { NotFoundComponent } from './not-found/not-found.component';
+import { NewPostComponent } from './new-post/new-post.component';
+
 @NgModule({
   declarations: [
     HomeComponent,
     LoginComponent,
     SignUpComponent,
     UserComponent,
-    PostComponent
+    PostComponent,
+    NotFoundComponent,
+    NewPostComponent
   ],
   imports: [
     CommonModule,

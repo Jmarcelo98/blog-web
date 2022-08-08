@@ -10,7 +10,10 @@
                 <mat-label>Comentário</mat-label>
                 <input matInput placeholder="Excelente post! O conteúdo foi muito bem descrito"
                     formControlName="comment">
-                <mat-error validate controlName="nickname">Comentário é obrigatório</mat-error>
+                <mat-error *ngIf="commentForm.get('comment')?.hasError('required')" validate controlName="comment">
+                    Comentário é obrigatório</mat-error>
+                <mat-error *ngIf="commentForm.get('comment')?.hasError('minlength')" validate controlName="comment">
+                    Comentário deverá conter no mínimo 9 caracteres</mat-error>
             </mat-form-field>
 
         </div>

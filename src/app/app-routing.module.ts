@@ -5,8 +5,9 @@ import { HomeComponent } from './pages/pages/home/home.component';
 import { SignUpComponent } from './pages/pages/sign-up/sign-up.component';
 import { UserComponent } from './pages/pages/user/user.component';
 import { AuthGuardService } from './services/auth-guard.service';
-import { CreatePostComponent } from './components/create-post/create-post.component';
 import { PostComponent } from './pages/pages/post/post.component';
+import { NotFoundComponent } from './pages/pages/not-found/not-found.component';
+import { NewPostComponent } from './pages/pages/new-post/new-post.component';
 
 const routes: Routes = [
 
@@ -23,6 +24,12 @@ const routes: Routes = [
     component: SignUpComponent
   },
   {
+    path: 'novo-post',
+    component: NewPostComponent,
+    canActivate: [AuthGuardService],
+    canActivateChild: [AuthGuardService]
+  },
+  {
     path: ':nickname',
     component: UserComponent,
     canActivate: [AuthGuardService],
@@ -35,12 +42,9 @@ const routes: Routes = [
     canActivateChild: [AuthGuardService]
   },
   {
-    path: "novo-post",
-    component: CreatePostComponent,
-    canActivate: [AuthGuardService],
-    canActivateChild: [AuthGuardService]
-  }
-
+    path: '**',
+    component: NotFoundComponent
+  },
 ];
 
 @NgModule({
