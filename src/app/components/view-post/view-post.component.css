@@ -35,5 +35,6 @@ mat-card-content {
 }
 
 .container {
-    text-align: -webkit-center;
+    justify-content: center;
+    display: grid;
 }

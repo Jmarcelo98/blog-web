@@ -1,29 +1,33 @@
-<h3>Criar comentário</h3>
+<div id="body">
 
-<form [formGroup]="commentForm">
+    <h3>Criar comentário</h3>
 
-    <div class="row">
+    <form [formGroup]="commentForm">
 
-        <div class="col-md-10 col-9">
+        <div class="row">
 
-            <mat-form-field class="example-full-width" appearance="outline">
-                <mat-label>Comentário</mat-label>
-                <input matInput placeholder="Excelente post! O conteúdo foi muito bem descrito"
-                    formControlName="comment">
-                <mat-error *ngIf="commentForm.get('comment')?.hasError('required')" validate controlName="comment">
-                    Comentário é obrigatório</mat-error>
-                <mat-error *ngIf="commentForm.get('comment')?.hasError('minlength')" validate controlName="comment">
-                    Comentário deverá conter no mínimo 9 caracteres</mat-error>
-            </mat-form-field>
+            <div class="col-md-10 col-9">
+
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Comentário</mat-label>
+                    <input matInput placeholder="Excelente post! O conteúdo foi muito bem descrito"
+                        formControlName="comment">
+                    <mat-error *ngIf="commentForm.get('comment')?.hasError('required')" validate controlName="comment">
+                        Comentário é obrigatório</mat-error>
+                    <mat-error *ngIf="commentForm.get('comment')?.hasError('minlength')" validate controlName="comment">
+                        Comentário deverá conter no mínimo 9 caracteres</mat-error>
+                </mat-form-field>
+
+            </div>
+
+            <div class="col-md-2 col-3 positionBtn">
+
+                <button type="button" class="btn btn-outline-secondary btnCreate"
+                    (click)="createComment()">Criar</button>
+
+            </div>
 
         </div>
 
-        <div class="col-md-2 col-3 positionBtn">
-
-            <button type="button" class="btn btn-outline-secondary btnCreate" (click)="createComment()">Criar</button>
-
-        </div>
-
-    </div>
-
-</form>
+    </form>
+</div>

@@ -36,12 +36,19 @@ export class CreatePostComponent implements OnInit {
     spellcheck: true,
     height: '15rem',
     minHeight: '5rem',
+    sanitize: false,
     translate: 'no',
     defaultParagraphSeparator: 'p',
     defaultFontName: 'Arial',
     toolbarHiddenButtons: [
-      ['insertImage'], ['insertVideo'], ['undo'], ['redo'],
-    ],
+      ['insertImage'], ['insertVideo'], ['undo'], ['redo'], ['unlink']
+    ], 
+    customClasses: [
+      {
+        name: "link",
+        class: "hidden",
+      },
+    ]
   };
 
   uploadProfilePicture(event: any) {
