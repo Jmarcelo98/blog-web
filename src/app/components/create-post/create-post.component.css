@@ -15,6 +15,15 @@
     margin: 0 10px;
 }
 
+.published {
+    text-align-last: start;
+}
+
+
 .mat-form-field {
     display: grid;
+}
+
+.thumbnail {
+    margin: 0.25em 0;
 }

@@ -32,7 +32,7 @@
             <div class="row">
 
                 <div class="col-md-6 col-12">
-                    <input type="file" class="form-control" id="foto" #fileInput
+                    <input type="file" class="form-control thumbnail" id="foto" #fileInput
                         (change)="uploadProfilePicture($event)">
                     <mat-error *ngIf="postForm.get('thumbnail')?.hasError('nullThumb')" validate
                         controlName="thumbnail">
@@ -40,6 +40,22 @@
                 </div>
 
                 <div class="col-md-6">
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Categoria</mat-label>
+                        <mat-select formControlName="categoryForm">
+                            <mat-option *ngFor="let item of category" [value]="item">
+                                {{item.description}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error>Categoria é obrigatória</mat-error>
+                    </mat-form-field>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 published">
                     <label class="example-margin">Publicar agora:</label>
                     <mat-radio-group formControlName="isPublished">
                         <mat-radio-button class="example-margin" [checked]='true' value="true">Sim</mat-radio-button>
