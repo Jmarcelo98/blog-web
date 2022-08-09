@@ -4,13 +4,15 @@ mat-card-content {
 
 .custom.mat-card-actions {
     padding: 0px !important;
-    margin-left: -16px;
-    margin-right: -16px;
+    /* margin-left: -5px;
+    margin-right: -16px; */
 }
 
 .createdFooter {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-top: 10px;
+    display: grid;
+    justify-content: center;
 }
 
 .tittleComment {

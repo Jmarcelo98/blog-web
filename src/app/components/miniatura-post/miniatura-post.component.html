@@ -28,7 +28,9 @@
 
                 <div class="col-12">
 
-                    {{ (item.content.length>100)? (item.content | slice:0:100) + '...': (item.content) }}
+                    <div
+                        [outerHTML]="(item.content.length>100)? ( item.content | slice:0:100) + '...': (item.content)">
+                    </div>
 
                     <a href="/post/{{item.id}}">
                         <span *ngIf="item.content.length > 100">ver mais</span>

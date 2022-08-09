@@ -1,6 +1,7 @@
 .border {
     border: solid 1px;
     width: 100%;
+    margin-left: 0px;
     margin-bottom: 10px;
 }
 
