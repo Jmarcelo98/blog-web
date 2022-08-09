@@ -25,13 +25,10 @@
 
             </div>
 
-            <!-- <div class="row">
-                
-            </div> -->
-
             <div class="row">
 
                 <div class="col-md-6 col-12">
+
                     <input type="file" class="form-control thumbnail" id="foto" #fileInput
                         (change)="uploadProfilePicture($event)">
                     <mat-error *ngIf="postForm.get('thumbnail')?.hasError('nullThumb')" validate
@@ -43,8 +40,8 @@
 
                     <mat-form-field appearance="outline">
                         <mat-label>Categoria</mat-label>
-                        <mat-select formControlName="categoryForm">
-                            <mat-option *ngFor="let item of category" [value]="item">
+                        <mat-select formControlName="category">
+                            <mat-option *ngFor="let item of categories" [value]="item">
                                 {{item.description}}
                             </mat-option>
                         </mat-select>

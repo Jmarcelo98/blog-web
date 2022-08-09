@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { Category } from '../models/category';
 import { Post } from '../models/post';
-import { PostInput } from '../models/postInput';
 import { AuthorizationService } from './authorization.service';
 
 @Injectable({
@@ -12,8 +12,13 @@ export class PostService {
 
   constructor(private httpClient: HttpClient, private authorizationService: AuthorizationService) { }
 
-  createPost(postInput: PostInput) {
-    return this.httpClient.post(`${environment.apiUrl}/posts`, postInput,
+  createPost(postInput: {
+    content: string, description: string, title: string,
+    thumbnail: any, isPublished: boolean, categoryForm: Category}) {
+
+    console.log(postInput);
+      
+    return this.httpClient.post<number>(`${environment.apiUrl}/posts`, postInput,
       { headers: this.authorizationService.headersAuth() })
   }
 

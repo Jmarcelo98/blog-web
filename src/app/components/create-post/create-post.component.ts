@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { Category } from 'src/app/models/category';
 import { CategoryService } from 'src/app/services/category.service';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-create-post',
@@ -11,7 +13,8 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class CreatePostComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private categoryService: CategoryService) { }
+  constructor(private formBuilder: FormBuilder, private categoryService: CategoryService,
+    private postService: PostService, private router: Router) { }
 
   async ngOnInit() {
     await this.getAllCategories()
@@ -23,12 +26,10 @@ export class CreatePostComponent implements OnInit {
     title: [null, [Validators.required]],
     thumbnail: [null, [Validators.required]],
     isPublished: [true, [Validators.required]],
-    categoryForm: [null, [Validators.required]]
+    category: [null, [Validators.required]]
   })
 
-  selectedValue: Category;
-
-  category: Category[]
+  categories: Category[]
 
   config: AngularEditorConfig = {
     editable: true,
@@ -58,18 +59,32 @@ export class CreatePostComponent implements OnInit {
     }
   }
 
-  criarPost() {
+  async criarPost() {
 
-    console.log(this.postForm.value);
+    this.postForm.markAllAsTouched();
 
+    if (this.postForm.get('thumbnail')?.value == null) {
+      this.postForm.controls['thumbnail'].setErrors({ nullThumb: true })
+    }
 
+    if (this.postForm.valid) {
+
+      await this.postService.createPost(this.postForm.value).toPromise().then(idPost => {
+
+        this.router.navigate(['/post/' + idPost])
+
+      }).catch(err => {
+        console.log(err);
+      })
+
+    }
   }
 
   async getAllCategories() {
 
     this.categoryService.getAll().toPromise().then(suc => {
 
-      this.category = suc;
+      this.categories = suc;
 
     }).catch(err => {
       console.log(err);
