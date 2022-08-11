@@ -18,15 +18,6 @@ mat-card-subtitle {
     font-size: 12px;
 }
 
-mat-icon {
-    font-size: 65px !important;
-}
-
-#morePosts {
-    margin-top: 20px;
-    text-align: center;
-}
-
 .publishedAt {
     font-size: 10px;
     text-align-last: right;

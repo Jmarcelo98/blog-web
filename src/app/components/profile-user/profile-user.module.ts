@@ -11,6 +11,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { ButtonFollowComponent } from './button-follow/button-follow.component';
 import { ProfileInfosComponent } from './profile-infos/profile-infos.component';
 import { MiniaturaPostModule } from '../miniatura-post/miniatura-post.module';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MiniaturaPostModule } from '../miniatura-post/miniatura-post.module';
     NavbarModule,
     MatButtonModule,
     MatDividerModule,
+    MatIconModule,
     MiniaturaPostModule
   ],
 })

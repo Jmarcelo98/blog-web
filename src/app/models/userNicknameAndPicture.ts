@@ -1,4 +1,4 @@
-export class ModalFollow {
+export class UserNicknameAndPicture {
     nickname: string;
     profilePicture:any;
 }

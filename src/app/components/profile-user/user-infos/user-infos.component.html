@@ -61,4 +61,21 @@
 
 <h1>Posts mais recentes publicados </h1>
 
-<app-miniatura-post [nickname]="user.nickname" [postsCreated]="countPostsCreated"></app-miniatura-post>
+<div class="row">
+    <div class="col-md-6 colMiniatura col-12 mgBtn" *ngFor="let item of posts ">
+        <app-miniatura-post class="appMiniatura" [posts]="item"></app-miniatura-post>
+    </div>
+</div>
+
+<div *ngIf="sizeListPost < countPostsCreated" class="row">
+
+    <div class="col-12">
+        <div id="morePosts">
+            <button class="btn btnLoginLogout" title="Carregar mais posts" (click)="morePosts()" mat-icon-button
+                matSuffix>
+                <mat-icon>{{'playlist_add'}}</mat-icon>
+            </button>
+        </div>
+    </div>
+
+</div>

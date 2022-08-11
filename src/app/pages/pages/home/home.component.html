@@ -1,5 +1,32 @@
 <div class="container">
-    
-    <!-- <app-edit-profile></app-edit-profile> -->
+
+
+
+    <div class="row">
+
+        <div class="col-9">
+
+            <mat-card style="margin-top: 15px;">
+
+                <h2>POSTS MAIS RECENTES</h2>
+
+                <app-home-recent-post [postsRecent]="postsMostRecent"></app-home-recent-post>
+            </mat-card>
+
+
+        </div>
+
+        <div class="col-3">
+            <mat-card style="margin-top: 15px;">
+
+                <h3>USUÁRIOS COM MAIS SEGUIDORES</h3>
+
+                <app-user-most-followers *ngIf="usersMostFollows" [userNicknameAndPicture]="usersMostFollows"></app-user-most-followers>
+            </mat-card>
+        </div>
+
+    </div>
+
+
 
 </div>

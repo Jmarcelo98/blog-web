@@ -41,4 +41,8 @@ export class PostService {
     )
   }
 
+  getMostRecentPost() {
+    return this.httpClient.get<Post[]>(`${environment.apiUrl}/posts/most-recent`)
+  }
+
 }

@@ -1,3 +1,8 @@
+mat-icon {
+    font-size: 65px !important;
+}
+
+
 img {
     width: 15em;
     border-radius: 100%;
@@ -9,15 +14,35 @@ h1 {
     font-size: 22px;
 }
 
+#morePosts {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
 #spaceToPost {
     margin-top: 25px;
     margin-bottom: 45px;
+}
+
+.colMiniatura {
+    display: grid;
+    justify-items: center;
+}
+
+.appMiniatura{
+    height: 100%;
+    width: 95%;
+    display: grid;
 }
 
 .right {
     text-align: right;
 }
 
+.mgBtn {
+    margin-bottom: 25px;
+}
 
 .infosNumber {
     margin-top: 20px;
@@ -35,6 +60,7 @@ h1 {
         width: 10em;
         border-radius: 100%;
     }
+
     .btnEditAndFollow {
         margin-top: 10px;
     }

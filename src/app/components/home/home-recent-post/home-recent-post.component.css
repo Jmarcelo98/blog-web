@@ -1,0 +1,11 @@
+.colMiniatura {
+    display: grid;
+    justify-items: center;
+    margin-top: 15px;
+}
+
+.appMiniatura{
+    height: 100%;
+    width: 95%;
+    display: grid;
+}

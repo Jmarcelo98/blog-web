@@ -53,11 +53,14 @@
 
             <div class="row">
                 <div class="col-12 published">
-                    <label class="example-margin">Publicar agora:</label>
-                    <mat-radio-group formControlName="isPublished">
-                        <mat-radio-button class="example-margin" [checked]='true' value="true">Sim</mat-radio-button>
-                        <mat-radio-button class="example-margin" value="false">Não</mat-radio-button>
-                    </mat-radio-group>
+                    <div class="borderInputIsPublished">
+                        <label class="example-margin">Publicar agora:</label>
+                        <mat-radio-group formControlName="isPublished">
+                            <mat-radio-button class="example-margin" [checked]='true' value="true">Sim
+                            </mat-radio-button>
+                            <mat-radio-button class="example-margin" value="false">Não</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
                 </div>
             </div>
 

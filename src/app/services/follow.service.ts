@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { ModalFollow } from '../models/modalFollow';
+import { UserNicknameAndPicture } from '../models/userNicknameAndPicture';
 import { FollowCount } from '../models/followCount';
 import { AuthorizationService } from './authorization.service';
 
@@ -13,7 +13,6 @@ export class FollowService {
   constructor(private httpClient: HttpClient, private authorizationService: AuthorizationService) { }
 
   create(nickname: string) {
-    // return this.httpClient.post(`${environment.apiUrl}/follower`, login);
     return this.httpClient.post(`${environment.apiUrl}/follower`, nickname,
       { headers: this.authorizationService.headersAuth() })
   }
@@ -28,9 +27,14 @@ export class FollowService {
       { headers: this.authorizationService.headersAuth() })
   }
 
+
+  getMostFollowsUsers() {
+    return this.httpClient.get<UserNicknameAndPicture[]>(`${environment.apiUrl}/follower/most-followers`)
+  }
+
   getAllFollow(typeFollow: string, nickname: string) {
     let urlType = "all-" + typeFollow + "/" + nickname
-    return this.httpClient.get<ModalFollow[]>(`${environment.apiUrl}/follower/${urlType}`,
+    return this.httpClient.get<UserNicknameAndPicture[]>(`${environment.apiUrl}/follower/${urlType}`,
       { headers: this.authorizationService.headersAuth() })
   }
 

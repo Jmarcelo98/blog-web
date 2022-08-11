@@ -9,6 +9,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { jwtConfig } from './config/jwt-config';
 import { PagesModule } from './pages/pages/pages.module';
 import { NavbarModule } from './components/navbar/navbar.module';
+import { HomeRecentPostComponent } from './components/home/home-recent-post/home-recent-post.component';
 
 @NgModule({
   declarations: [

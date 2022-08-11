@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FollowCount } from 'src/app/models/followCount';
+import { Post } from 'src/app/models/post';
 import { User } from 'src/app/models/user';
 import { AuthorizationService } from 'src/app/services/authorization.service';
 import { FollowService } from 'src/app/services/follow.service';
@@ -24,6 +25,12 @@ export class UserInfosComponent implements OnInit {
 
   followCount: FollowCount = new FollowCount()
 
+  sizeListPost: number
+
+  itensPerPage: number = 4
+
+  posts: Post[]
+
   constructor(private authorizationService: AuthorizationService, private dialog: MatDialog,
     private postService: PostService, private followService: FollowService) { }
 
@@ -32,6 +39,8 @@ export class UserInfosComponent implements OnInit {
     await this.countPosts()
 
     await this.countFollow()
+
+    await this.findAllByUser()
 
   }
 
@@ -75,6 +84,28 @@ export class UserInfosComponent implements OnInit {
     }
 
     return false;
+
+  }
+
+
+  async findAllByUser() {
+    await this.postService.findAllByUser(this.user.nickname, this.itensPerPage).toPromise().then(post => {
+
+      this.posts = post
+      this.sizeListPost = post.length
+
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+
+
+  async morePosts() {
+
+    if (this.posts.length < this.countPostsCreated) {
+      this.itensPerPage += 2;
+      await this.findAllByUser()
+    }
 
   }
 

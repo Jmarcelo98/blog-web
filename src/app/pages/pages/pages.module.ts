@@ -24,6 +24,7 @@ import { ViewPostModule } from 'src/app/components/view-post/view-post.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { CreatePostModule } from 'src/app/components/create-post/create-post.module';
+import { HomeModule } from 'src/app/components/home/home.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CreatePostModule } from 'src/app/components/create-post/create-post.mod
     ViewPostModule,
     ProfileUserModule,
     CreatePostModule,
+    HomeModule,
     ModalModule,
     ReactiveFormsModule,
     MatCardModule,

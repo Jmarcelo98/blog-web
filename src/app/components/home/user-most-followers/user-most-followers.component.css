@@ -1,0 +1,22 @@
+img {
+    width: 50px;
+    border-radius: 100%;
+}
+
+.notStyle {
+    all: unset;
+    cursor: pointer;
+}
+
+.row {
+    border: ridge 1px;
+    margin-bottom: 10px;
+}
+
+.nickname {
+    align-self: center;
+}
+
+.notFollow{
+    text-align: center;
+}

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { ModalFollow } from 'src/app/models/modalFollow';
+import { UserNicknameAndPicture } from 'src/app/models/userNicknameAndPicture';
 import { FollowService } from 'src/app/services/follow.service';
 
 @Component({
@@ -21,7 +21,7 @@ export class FollowModalComponent implements OnInit {
 
   titleType: string
 
-  modalFollow: ModalFollow[];
+  modalFollow: UserNicknameAndPicture[];
 
   isValueBiggerThenZero: boolean
 
