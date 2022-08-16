@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Post } from 'src/app/models/post';
+import { AuthorizationService } from 'src/app/services/authorization.service';
 import { LikedService } from 'src/app/services/liked.service';
 
 @Component({
@@ -8,49 +10,73 @@ import { LikedService } from 'src/app/services/liked.service';
 })
 export class LikesComponent implements OnInit {
 
-  constructor(private likedService: LikedService) { }
+  constructor(private likedService: LikedService, private authorizationService: AuthorizationService) { }
 
   @Input()
-  idPost: number
+  post: Post
 
   isLiked: boolean
+
+  isSameUser: boolean
 
   countLikes: number
 
   async ngOnInit() {
 
-    await this.countLikesByPost()
-
     await this.isLikedByPost()
+
+    await this.countLikesByPost()
 
   }
 
   async countLikesByPost() {
-    this.likedService.countLikesByPost(this.idPost).toPromise().then( value => {
+    this.likedService.countLikesByPost(this.post.id).toPromise().then(value => {
       this.countLikes = value
-    }).catch( err => {
+    }).catch(err => {
       console.log(err);
     })
   }
-  
+
   async isLikedByPost() {
-    this.likedService.isLiked(this.idPost).toPromise().then( value => {
-      console.log(value);
-      
+    this.likedService.isLiked(this.post.id).toPromise().then(value => {
       this.isLiked = value
-    }).catch( err => {
+    }).catch(err => {
       console.log(err);
     })
+  }
+
+  isSamePostUser(): boolean {
+
+    if (this.post.user.nickname == this.authorizationService.getLoggedUser().sub) {
+      return true;
+    }
+    return false;
   }
 
   like() {
-    this.countLikes += 1;
-    this.isLiked = false
-  } 
+
+    this.likedService.create(this.post.id).subscribe(suc => {
+
+      this.countLikes += 1;
+      this.isLiked = true
+
+    }, err => {
+      console.log(err);
+    })
+
+  }
 
   unlike() {
-    this.countLikes -= 1;
-    this.isLiked = true
+
+    this.likedService.delete(this.post.id).subscribe(suc => {
+
+      this.countLikes -= 1;
+      this.isLiked = false
+
+    }, err => {
+      console.log(err);
+    })
+
   }
 
 }

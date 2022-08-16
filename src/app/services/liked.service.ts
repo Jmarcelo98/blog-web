@@ -20,4 +20,14 @@ export class LikedService {
       { headers: this.authorizationService.headersAuth() })
   }
 
+  create(idPost: number) {
+    return this.httpClient.post(`${environment.apiUrl}/liked`, idPost,
+      { headers: this.authorizationService.headersAuth() })
+  }
+
+  delete(idPost: number) {
+    return this.httpClient.delete(`${environment.apiUrl}/liked/${idPost}`,
+      { headers: this.authorizationService.headersAuth() })
+  }
+
 }

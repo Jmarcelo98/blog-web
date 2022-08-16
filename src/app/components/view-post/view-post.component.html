@@ -27,7 +27,7 @@
 
 
         <div class="likes">
-            <app-likes [idPost]="post.id"></app-likes>
+            <app-likes [post]="post"></app-likes>
         </div>
 
         <mat-divider></mat-divider>
@@ -40,7 +40,7 @@
 
         <hr *ngIf="post.comments.length == 0">
 
-        <span class="createdFooter"><i>Post criado em {{post.createdAt | date: 'dd/MM/yyyy'}}
+        <span class="createdFooter"><i>Post publicado em {{post.publishedAt | date: 'dd/MM/yyyy'}}
                 por <b> <a href="/{{post.user.nickname}}">{{post.user.nickname}}</a> </b></i></span>
 
     </mat-card>
