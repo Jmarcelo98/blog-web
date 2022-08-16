@@ -1,0 +1,18 @@
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+span {
+    margin-left: 5px;
+    font-style: italic;
+    font-family: sans-serif;
+}
+
+.col-10 {
+    display: flow-root;
+}
+
+.col-2 {
+    text-align: right;
+}

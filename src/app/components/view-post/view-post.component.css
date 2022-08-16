@@ -36,6 +36,10 @@ mat-card-content {
     text-align: center;
 }
 
+.likes {
+    margin: 10px !important;
+}
+
 .container {
     justify-content: center;
     display: grid;

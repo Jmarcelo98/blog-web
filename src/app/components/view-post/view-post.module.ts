@@ -8,6 +8,7 @@ import { ImgPostComponent } from './img-post/img-post.component';
 import { ContentPostComponent } from './content-post/content-post.component';
 import { DescriptionPostComponent } from './description-post/description-post.component';
 import { CommentModule } from '../comment/comment.module';
+import { LikesModule } from '../likes/likes.module';
 
 
 
@@ -17,6 +18,7 @@ import { CommentModule } from '../comment/comment.module';
   imports: [
     CommonModule,
     CommentModule,
+    LikesModule,
     MatCardModule,
     MatDividerModule
   ]

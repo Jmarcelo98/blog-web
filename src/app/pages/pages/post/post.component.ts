@@ -20,7 +20,7 @@ export class PostComponent implements OnInit {
 
     this.idPost = Number(this.activatedRoute.snapshot.paramMap.get('id'))
 
-    await this.findById();
+    await this.findById(); 
 
   }
 

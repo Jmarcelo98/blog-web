@@ -25,16 +25,23 @@
             <app-content-post [post]="post"></app-content-post>
         </mat-card-content>
 
+
+        <div class="likes">
+            <app-likes [idPost]="post.id"></app-likes>
+        </div>
+
         <mat-divider></mat-divider>
 
         <mat-card-actions class="custom">
+
             <!-- <mat-card-title class="tittleComment">Comentários</mat-card-title> -->
             <app-comment [post]="post"></app-comment>
         </mat-card-actions>
 
         <hr *ngIf="post.comments.length == 0">
 
-        <span class="createdFooter"><i>Post criado em {{post.createdAt | date: 'dd/MM/yyyy'}}</i></span>
+        <span class="createdFooter"><i>Post criado em {{post.createdAt | date: 'dd/MM/yyyy'}}
+                por <b> <a href="/{{post.user.nickname}}">{{post.user.nickname}}</a> </b></i></span>
 
     </mat-card>
 </div>
