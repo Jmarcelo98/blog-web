@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Post } from 'src/app/models/post';
 
 @Component({
   selector: 'app-img-post',
@@ -8,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class ImgPostComponent implements OnInit {
 
   constructor() { }
+
+  @Input()
+  post: Post
 
   ngOnInit(): void {
   }
