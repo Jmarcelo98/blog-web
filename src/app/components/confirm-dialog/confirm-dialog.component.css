@@ -1,0 +1,12 @@
+.btn-light {
+    border: solid 1px rgb(216, 216, 216);
+    text-align: right;
+}
+
+.btn-primary {
+    text-align: right;
+}
+
+.row {
+    width: 100%;
+}
