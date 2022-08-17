@@ -12,7 +12,7 @@ import { NavbarModule } from './components/navbar/navbar.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

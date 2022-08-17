@@ -2,51 +2,60 @@
 
     <!-- <div class="col-md-6 col-12 mgBtn" *ngFor="let item of posts"> -->
 
-        <mat-card class="example-card">
+    <mat-card class="example-card">
 
-            <div class="row">
+        <div class="row">
 
-                <mat-card-title-group>
+            <mat-card-title-group>
 
-                    <div class="col-9">
-                        <mat-card-title>{{posts.title}}</mat-card-title>
+                <div class="col-9">
+                    <mat-card-title>{{posts.title}}</mat-card-title>
 
-                        <mat-card-subtitle> {{ (posts.description.length>40) ? (posts.description |
-                            slice:0:40)+'..':(posts.description) }}</mat-card-subtitle>
-                    </div>
-
-                    <div class="col-3">
-                        <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
-                    </div>
-
-                </mat-card-title-group>
-
-            </div>
-
-
-            <div class="row spaceContent">
-
-                <div class="col-12">
-
-                    <div
-                        [outerHTML]="(posts.content.length>100)? ( posts.content | slice:0:100) + '...': (posts.content + ' ')">
-                    </div>
-
-                    <a href="/post/{{posts.id}}">
-                        <span *ngIf="posts.content.length > 100">ver mais</span>
-                        <span *ngIf="posts.content.length <= 100">Ver post</span>
-                    </a>
-
+                    <mat-card-subtitle> {{ (posts.description.length>40) ? (posts.description |
+                        slice:0:40)+'..':(posts.description) }}</mat-card-subtitle>
                 </div>
 
+                <div class="col-3">
+                    <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+                </div>
+
+            </mat-card-title-group>
+
+        </div>
+
+
+        <div class="row spaceContent">
+
+            <div class="col-12">
+
+                <div
+                    [outerHTML]="(posts.content.length>100)? ( posts.content | slice:0:100) + '...': (posts.content + ' ')">
+                </div>
+
+                <a href="/post/{{posts.id}}">
+                    <span *ngIf="posts.content.length > 100">ver mais</span>
+                    <span *ngIf="posts.content.length <= 100">Ver post</span>
+                </a>
+
             </div>
 
-            <div class="col-12 publishedAt">
+        </div>
+
+        <div class="col-12 publishedAt">
+            <div *ngIf="posts.isPublished then published else notPublished"></div>
+
+            <ng-template #published> 
                 Publicado em: {{posts.publishedAt | date: 'dd/MM/yyyy'}}
-            </div>
+            </ng-template>
 
-        </mat-card>
+            <ng-template #notPublished> 
+                Criado em: {{posts.createdAt| date: 'dd/MM/yyyy'}}
+            </ng-template>
 
-    </div>
+        </div>
+
+    </mat-card>
+
+</div>
 
 <!-- </div> -->

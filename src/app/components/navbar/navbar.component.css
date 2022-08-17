@@ -14,7 +14,7 @@ nav {
 .btnNewPost {
     border: unset;
     cursor: pointer;
-    padding-left: 5%;
+    margin-left: 5%;
     align-self: center;
 }
 

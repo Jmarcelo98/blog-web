@@ -1,0 +1,40 @@
+::ng-deep snack-bar-container.green-snackbar {
+    padding: 20px;
+    background-color: rgb(95, 235, 52);
+    color: black;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+p {
+    font-size: 2em;
+    font-family: monospace;
+}
+
+.center {
+    text-align: center;
+    margin-top: 25%;
+}
+
+.btnPublished {
+    width: 95%;
+    left: 10px;
+    text-align: right;
+    position: relative;
+    top: 30px;
+    z-index: 1000;
+}
+
+.appMiniatura {
+    height: 100%;
+    width: 95%;
+    display: grid;
+}
+
+.colMiniatura {
+    display: grid;
+    margin-top: 15px;
+}

@@ -16,6 +16,8 @@ export class NavbarComponent implements OnInit {
 
   logged: boolean;
 
+  containsPostLook: boolean
+
   public categories: Category[];
 
   async ngOnInit() {

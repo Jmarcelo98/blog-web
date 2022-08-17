@@ -4,8 +4,9 @@
     <img src="../../../assets/img/icon/blogWeb.ico" alt="Blog Web">
   </a>
 
-
-  <app-button-new-post class="btnNewPost"></app-button-new-post>
+  <div class="btnNewPost">
+    <app-button-new-post title="Criar Post"></app-button-new-post>
+  </div>
 
   <a *ngFor="let itens of categories" class="nav-item nav-link">
     <button class="btn btnLinks" (click)="getPostsByCategory(itens.id)">{{itens.description}}</button>

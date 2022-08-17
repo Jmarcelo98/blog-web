@@ -25,6 +25,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { CreatePostModule } from 'src/app/components/create-post/create-post.module';
 import { HomeModule } from 'src/app/components/home/home.module';
+import { PostLockedComponent } from './post-lock/post-locked.component';
+import { PostLockModule } from 'src/app/components/post-lock/post-lock.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { HomeModule } from 'src/app/components/home/home.module';
     UserComponent,
     PostComponent,
     NotFoundComponent,
-    NewPostComponent
+    NewPostComponent,
+    PostLockedComponent
   ],
   imports: [
     CommonModule,
@@ -44,6 +47,7 @@ import { HomeModule } from 'src/app/components/home/home.module';
     ViewPostModule,
     ProfileUserModule,
     CreatePostModule,
+    PostLockModule,
     HomeModule,
     ModalModule,
     ReactiveFormsModule,

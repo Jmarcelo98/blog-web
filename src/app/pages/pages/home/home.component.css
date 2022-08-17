@@ -9,3 +9,12 @@ h3 {
 mat-card {
     background-color: #e5e5e500;
 }
+
+@media only screen and (max-width: 768px) {
+    .firstCel {
+        order: 0;
+    }
+    .secondCel {
+        order: 1;
+    }
+}

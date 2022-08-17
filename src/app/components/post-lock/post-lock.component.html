@@ -1,0 +1,20 @@
+<div *ngIf="postsLocks.length > 0 then exists else notExists"></div>
+
+<ng-template #notExists>
+    <div class="center">
+        <p>Todos os seus posts foram publicados!</p>
+    </div>
+</ng-template>
+
+<ng-template #exists>
+    <div class="row">
+        <div class="col-md-6 colMiniatura col-12 mgBtn" *ngFor="let item of postsLocks; let i=index">
+            <div class="btnPublished">
+                <button class="btn"  title="Publicar" (click)="publish(item, i)" mat-icon-button matSuffix>
+                    <mat-icon>{{'playlist_add_check'}}</mat-icon>
+                </button>
+            </div>
+            <app-miniatura-post class="appMiniatura" [posts]="item"></app-miniatura-post>
+        </div>
+    </div>
+</ng-template>

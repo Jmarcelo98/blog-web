@@ -14,11 +14,17 @@ export class PostService {
 
   createPost(postInput: {
     content: string, description: string, title: string,
-    thumbnail: any, isPublished: boolean, categoryForm: Category}) {
+    thumbnail: any, isPublished: boolean, categoryForm: Category
+  }) {
 
     console.log(postInput);
-      
+
     return this.httpClient.post<number>(`${environment.apiUrl}/posts`, postInput,
+      { headers: this.authorizationService.headersAuth() })
+  }
+
+  existsPostLock() {
+    return this.httpClient.get<boolean>(`${environment.apiUrl}/posts/lock`,
       { headers: this.authorizationService.headersAuth() })
   }
 
@@ -39,6 +45,20 @@ export class PostService {
         params: { pagina: 0, itensPerPage: itensPerPage }
       } ,
     )
+  }
+
+  findAllByUserNotPublished(itensPerPage: number) {
+    return this.httpClient.get<Post[]>(`${environment.apiUrl}/posts/not-published`,
+      {
+        headers: this.authorizationService.headersAuth(),
+        params: { pagina: 0, itensPerPage: itensPerPage }
+      } ,
+    )
+  }
+
+  publish(id: number) {
+    return this.httpClient.patch(`${environment.apiUrl}/posts/publish`, id,
+      { headers: this.authorizationService.headersAuth() })
   }
 
   getMostRecentPost() {

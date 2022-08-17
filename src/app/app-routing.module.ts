@@ -8,6 +8,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { PostComponent } from './pages/pages/post/post.component';
 import { NotFoundComponent } from './pages/pages/not-found/not-found.component';
 import { NewPostComponent } from './pages/pages/new-post/new-post.component';
+import { PostLockedComponent } from './pages/pages/post-lock/post-locked.component';
 
 const routes: Routes = [
 
@@ -38,6 +39,12 @@ const routes: Routes = [
   {
     path: 'post/:id',
     component: PostComponent,
+    canActivate: [AuthGuardService],
+    canActivateChild: [AuthGuardService]
+  },
+  {
+    path: 'post-lock',
+    component: PostLockedComponent,
     canActivate: [AuthGuardService],
     canActivateChild: [AuthGuardService]
   },

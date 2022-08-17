@@ -5,9 +5,15 @@
 
         <mat-menu #beforeMenu="matMenu" xPosition="before">
             <!-- <button mat-menu-item mat-button (click)="openDialog()"> -->
-                <button mat-menu-item mat-button (click)="redirectProfilePageUserLogged()">
-                    <mat-icon>{{'person'}}</mat-icon> Perfil
-                </button>
+            <button mat-menu-item mat-button (click)="redirectProfilePageUserLogged()">
+                <mat-icon>{{'person'}}</mat-icon> Perfil
+            </button>
+
+            <mat-divider></mat-divider>
+
+            <button [disabled]="!existsPostLock" mat-menu-item mat-button (click)="redirectPostsLocks()">
+                <mat-icon>{{'lock'}}</mat-icon> Posts não publicados
+            </button>
 
             <mat-divider></mat-divider>
 
