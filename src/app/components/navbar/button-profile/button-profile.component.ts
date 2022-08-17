@@ -25,7 +25,7 @@ export class ButtonProfileComponent {
 
   redirectProfilePageUserLogged() {
 
-    this.router.navigate(['/' + this.authorizationService.getLoggedUser().sub])
+    this.router.navigate(['/usuario/' + this.authorizationService.getLoggedUser().sub])
     .then(() => {
       window.location.reload();
     });

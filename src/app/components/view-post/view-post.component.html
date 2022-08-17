@@ -41,7 +41,7 @@
         <hr *ngIf="post.comments.length == 0">
 
         <span class="createdFooter"><i>Post publicado em {{post.publishedAt | date: 'dd/MM/yyyy'}}
-                por <b> <a href="/{{post.user.nickname}}">{{post.user.nickname}}</a> </b></i></span>
+                por <b> <a href="/usuario/{{post.user.nickname}}">{{post.user.nickname}}</a> </b></i></span>
 
     </mat-card>
 </div>

@@ -43,7 +43,7 @@ export class FollowModalComponent implements OnInit {
 
   redirectUser(nickname: string) {
 
-    this.router.navigate(['/' + nickname])
+    this.router.navigate(['/usuario/' + nickname])
       .then(() => {
         window.location.reload();
       });

@@ -30,7 +30,7 @@ const routes: Routes = [
     canActivateChild: [AuthGuardService]
   },
   {
-    path: ':nickname',
+    path: 'usuario/:nickname',
     component: UserComponent,
     canActivate: [AuthGuardService],
     canActivateChild: [AuthGuardService]

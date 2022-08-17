@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from 'src/app/models/post';
 import { PostService } from 'src/app/services/post.service';
 
@@ -10,7 +10,8 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class PostComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute, private postService: PostService) { }
+  constructor(private activatedRoute: ActivatedRoute, private postService: PostService,
+    private router: Router) { }
 
   post: Post = new Post()
 
@@ -31,7 +32,9 @@ export class PostComponent implements OnInit {
       this.post = pst
 
     }).catch(err => {
-      console.log(err)
+      if(err.status == 404) {
+        this.router.navigate(['/nao-encontrado'])
+      }
     })
 
   }

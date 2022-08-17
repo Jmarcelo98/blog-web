@@ -42,7 +42,7 @@ export class UserMostFollowersComponent implements OnInit {
 
   redirectUser(nickname: string) {
 
-    this.router.navigate(['/' + nickname])
+    this.router.navigate(['/usuario/' + nickname])
     // this.router.navigate(['/' + nickname])
     //   .then(() => {
     //     window.location.reload();

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -11,7 +11,8 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute, private userService: UserService, private domSanitizer: DomSanitizer) { }
+  constructor(private activatedRoute: ActivatedRoute, private userService: UserService, 
+    private domSanitizer: DomSanitizer, private router: Router) { }
 
   user: User = new User();
 
@@ -30,7 +31,9 @@ export class UserComponent implements OnInit {
 
     }).catch(err => {
 
-      console.log(err);
+      if(err.status == 404) {
+        this.router.navigate(['/nao-encontrado'])
+      }
 
     })
 
