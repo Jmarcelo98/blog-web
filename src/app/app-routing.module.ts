@@ -9,6 +9,7 @@ import { PostComponent } from './pages/pages/post/post.component';
 import { NotFoundComponent } from './pages/pages/not-found/not-found.component';
 import { NewPostComponent } from './pages/pages/new-post/new-post.component';
 import { PostLockedComponent } from './pages/pages/post-lock/post-locked.component';
+import { PostCategoriesComponent } from './pages/pages/post-categories/post-categories.component';
 
 const routes: Routes = [
 
@@ -45,6 +46,12 @@ const routes: Routes = [
   {
     path: 'post-lock',
     component: PostLockedComponent,
+    canActivate: [AuthGuardService],
+    canActivateChild: [AuthGuardService]
+  },
+  {
+    path: 'post/category/:category',
+    component: PostCategoriesComponent,
     canActivate: [AuthGuardService],
     canActivateChild: [AuthGuardService]
   },

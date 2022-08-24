@@ -27,6 +27,8 @@ import { CreatePostModule } from 'src/app/components/create-post/create-post.mod
 import { HomeModule } from 'src/app/components/home/home.module';
 import { PostLockedComponent } from './post-lock/post-locked.component';
 import { PostLockModule } from 'src/app/components/post-lock/post-lock.module';
+import { PostCategoriesComponent } from './post-categories/post-categories.component';
+import { PostCategoriesListModule } from 'src/app/components/post-categories-list/post-categories-list.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { PostLockModule } from 'src/app/components/post-lock/post-lock.module';
     PostComponent,
     NotFoundComponent,
     NewPostComponent,
-    PostLockedComponent
+    PostLockedComponent,
+    PostCategoriesComponent
   ],
   imports: [
     CommonModule,
@@ -50,6 +53,7 @@ import { PostLockModule } from 'src/app/components/post-lock/post-lock.module';
     PostLockModule,
     HomeModule,
     ModalModule,
+    PostCategoriesListModule,
     ReactiveFormsModule,
     MatCardModule,
     MatInputModule,

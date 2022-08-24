@@ -56,6 +56,13 @@ export class PostService {
     )
   }
 
+  findAllByCategoryPublished(category: string) {
+    return this.httpClient.get<Post[]>(`${environment.apiUrl}/posts/by-category/${category}`,
+      { headers: this.authorizationService.headersAuth() } ,
+    )
+  }
+
+
   publish(id: number) {
     return this.httpClient.patch(`${environment.apiUrl}/posts/publish`, id,
       { headers: this.authorizationService.headersAuth() })
